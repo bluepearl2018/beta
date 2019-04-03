@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <passport-clients></passport-clients>
+                    <passport-authorized-clients></passport-authorized-clients>
+                    <passport-personal-access-tokens-clients></passport-personal-access-tokens-clients>
                 </div>
             </div>
         </div>
