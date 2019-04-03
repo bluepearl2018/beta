@@ -1,0 +1,87 @@
+html,
+body {
+    color: #636b6f;
+}
+
+body {
+    /*fixed top menu */
+    padding-top: 36px;
+}
+
+.main-content {
+    border: solid 1px gray;
+}
+
+div#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
+
+h1 {
+    font-size: 2.1em;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #565656;
+    font-weight: bold;
+}
+
+h3::before {
+    content: ' > ';
+    font-size: 0.85em
+}
+
+p {
+    line-height: 1.34em;
+    margin-right: 10%;
+}
+
+p.lead {
+    padding-left: 1em;
+    border-left: solid 2px black;
+    color: #333;
+    letter-spacing: -0.02em
+}
+
+strong {
+    color: #555;
+    font-weight: 700;
+    letter-spacing: 0.03em
+}
+
+.btn-primary {
+    background-color: rgba(110, 104, 88, 0.78);
+    border-color: rgba(110, 104, 88, 0.78);
+}
+
+.nav-pills>.nav-item a {
+    color: #555;
+    border: solid 1px #555;
+}
+
+.nav-pills>.nav-link,
+.nav-item.nav-pill a {
+    color: #222 !important
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #2a8999;
+    color: #f1f1f1!important;
+    border-color: #2a8999;
+}
+
+#toolbar_mainpools {
+    background-color: #0a8398b8;
+}
+
+#toolbar_mainpools span {
+    color: #dedede;
+}
