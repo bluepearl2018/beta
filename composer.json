@@ -20,6 +20,7 @@
         "laracasts/flash": "^3.0",
         "laravel/cashier": "^9.1",
         "laravel/framework": "5.8.*",
+        "laravel/passport": "^7.2",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.7",
         "nwidart/laravel-modules": "^5.0",
