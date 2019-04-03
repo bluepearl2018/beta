@@ -8,17 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class ViewServiceProvider extends ServiceProvider
 {
     /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Bootstrap services.
+     * Register bindings in the container.
      *
      * @return void
      */
@@ -26,7 +16,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         View::composer(
-            'partials.general-menu', 'App\Http\ViewComposers\GeneralMenuComposer'
+            ['partials.general-menu', 'partials.nav-sidenav'], 'App\Http\ViewComposers\GeneralMenuComposer'
         );
 
         // Using class based composers...
@@ -35,4 +25,13 @@ class ViewServiceProvider extends ServiceProvider
         );
     }
 
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
 }

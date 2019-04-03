@@ -15,8 +15,13 @@ class CreateModulesTable extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('slug');
             $table->text('name');
+            $table->string('icon', '10')->unique();
             $table->text('description')->nullable();
+            $table->enum('front_status', ['on', 'off'])->default('off');
+            $table->enum('back_status', ['on', 'off'])->default('on');
+            $table->enum('status', ['dev', 'test', 'on', 'off'])->default('dev');
             $table->timestamps();
             $table->softDeletes();
         });
