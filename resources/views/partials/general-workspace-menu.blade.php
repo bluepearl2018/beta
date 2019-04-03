@@ -1,5 +1,5 @@
 {{-- TODO insérer des tites localisés via fichiers @lang dans les attributs title des a --}}
-<div id="toolbar_mainpools" class="clearfix m-0 px-2">
+<div id="toolbar" class="clearfix m-0 px-2">
     <ul class="list-inline text-right m-0 mb-0 pb-1 pt-0 px-2">
         <li class="list-inline-item float-left">
             <a href="/doc" 

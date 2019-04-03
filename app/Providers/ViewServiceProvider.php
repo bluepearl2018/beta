@@ -34,4 +34,5 @@ class ViewServiceProvider extends ServiceProvider
             'partials.breadcrumbs', 'App\Http\ViewComposers\BreadcrumbsComposer'
         );
     }
+
 }

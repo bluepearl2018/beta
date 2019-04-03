@@ -78,10 +78,19 @@ strong {
     border-color: #2a8999;
 }
 
-#toolbar_mainpools {
-    background-color: #0a8398b8;
+.header {
+    font-size: .75rem;
+    background-color: rgb(158, 148, 120);
 }
 
-#toolbar_mainpools span {
+.login-bar {
+    background-color: rgb(158, 148, 120);
+}
+
+#toolbar {
+    background-color: #126c7c;
+}
+
+#toolbar span {
     color: #dedede;
 }

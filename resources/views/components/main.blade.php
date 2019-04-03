@@ -2,7 +2,7 @@
         <div class="col-md-1">
             @include('partials.nav-sidenav')
         </div>
-        <div class="col-md-2" style="background-color: rgba(158, 148, 120, 0.78);">
+        <div class="col-md-2" style="background-color: rgb(158, 148, 120);">
             @yield('menu')
         </div>
         <div class="col-md-6">

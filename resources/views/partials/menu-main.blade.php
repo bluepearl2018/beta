@@ -1,4 +1,4 @@
-<div class="clearfix fixed-top" style="font-size:.75rem; background-color:#9e9478c7">
+<div class="clearfix fixed-top header">
 	<div class="d-flex clearfix">
 		<ul class="mr-auto mr-2 mb-0 list-inline">
 			<li class="list-inline-item">

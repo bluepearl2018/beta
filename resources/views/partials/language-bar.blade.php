@@ -10,7 +10,7 @@
                 <li class="list-inline-item">
                     <a class="text-light m-0 d-block" 
                     href="/setlocale/{{ $locale }}">
-                        <img class="img-fluid" width="16" height="16" alt="{{ App::getLocale() }}"  src="{!! asset('img/flags/' . $locale . '.png') !!}" />
+                        <img class="img-fluid" width="16" height="16" alt="{{ App::getLocale() }}"  src="{!! asset('img/flags/'.$locale.'.png') !!}" />
                     </a>
                 </li>
             @endif
