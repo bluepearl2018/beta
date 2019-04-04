@@ -3,6 +3,7 @@
 namespace Modules\Contact\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class ContactViewServiceProvider extends ServiceProvider
 {
@@ -11,9 +12,25 @@ class ContactViewServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
-        //
+        
+        View::composer(
+            ['contact::partials.contactBreadcrumbs'], \Modules\Contact\Http\ViewComposers\ContactBreadcrumbsComposer::class
+        );
+
+        View::composer(
+            ['contact::partials.contactPageTitle'], \Modules\Contact\Http\ViewComposers\ContactPageTitleComposer::class
+        );
+        
+        View::composer(
+            ['contact::partials.contactPageDescription'], \Modules\Contact\Http\ViewComposers\ContactPageDescriptionComposer::class
+        );
+        
+        View::composer(
+            ['contact::partials.contactPageKeywords'], \Modules\Contact\Http\ViewComposers\ContactPageKeywordsComposer::class
+        );
+
     }
 
     /**

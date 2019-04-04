@@ -19,7 +19,7 @@
                             </li>
                             @else
                             <li class="breadcrumb-item">
-                                <a class="text-muted" href="{{ url('/pages') }}/{{ $bcSlugs[1] }}">
+                                <a class="text-muted" href="{{ url('/pages') }}/{{ $bcSlugs[0] }}">
                                     {{ $currentPage->title }}
                                 </a>
                             </li>

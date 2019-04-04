@@ -36,6 +36,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapBackRoutes();
     }
 
     /**
@@ -50,6 +52,20 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(__DIR__ . '/../Routes/web.php');
+    }
+
+    /**
+     * Define the "back" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapBackRoutes()
+    {
+        Route::middleware('back')
+            ->namespace($this->moduleNamespace)
+            ->group(__DIR__ . '/../Routes/back.php');
     }
 
     /**

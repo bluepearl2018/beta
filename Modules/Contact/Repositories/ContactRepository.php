@@ -4,7 +4,7 @@ namespace Modules\Contact\Repositories;
 
 use \Modules\Contact\Entities\Contact;
 
-class BlogRepository extends Contact
+class ContactRepository extends Contact
 {
     protected function model()
     {
