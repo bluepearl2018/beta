@@ -1,7 +1,7 @@
 <div class="form-group">
     <label id="firstname-label" for="firstname">@lang('contacts.firstname')</label>
     <input name="firstname" type="text" 
-    value="@auth{{Auth::User()->firstname}}@endauth" readonly
+    value="@auth{{Auth::User()->firstname}}@endauth" @auth readonly @endauth
     class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" 
     id="firstname" placeholder="@lang('contacts.firstname')" aria-describedby="firstname-label" required />
     @if ($errors->has('firstname'))

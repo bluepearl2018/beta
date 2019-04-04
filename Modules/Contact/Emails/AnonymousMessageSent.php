@@ -2,10 +2,10 @@
 
 namespace Modules\Contact\Emails;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Emails\Mailable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use \Illuminate\Bus\Queueable;
+use \Illuminate\Mail\Mailable;
+use \Illuminate\Queue\SerializesModels;
+use \Illuminate\Contracts\Queue\ShouldQueue;
 use \App\User;
 
 class AnonymousMessageSent extends Mailable
@@ -61,7 +61,7 @@ class AnonymousMessageSent extends Mailable
         // TODO check ->bcc to admin
         return $this->from('contact-request@eutranet.com')
         ->subject($this->subject)
-        ->view('contact::emails.anonymous_message_sent')
+        ->view('contact::emails.anonymousMessageSent')
         ->with([
             'firstname' => $this->firstname,
             'surname' => $this->surname,

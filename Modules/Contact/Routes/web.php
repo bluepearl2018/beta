@@ -19,21 +19,29 @@ Route::prefix('contact')->group(function() {
     | Routes to contact Eutranet
     */
 
-    Route::get('contact-eutranet', 'ContactController@getContactEutranet')->name('contact-eutranet-get');
-    Route::post('contact-eutranet', 'ContactController@postContactEutranet')->name('contact-eutranet-post');
+    Route::get('contact', 'ContactController@getContact')->name('contact-get');
+    Route::post('contact', 'ContactController@postContact')->name('contact-post');
 
     /***
-    |---------------- ANONYMOUS CONTACTS ------------------------
+    |---------------- FOR REGISTERED USERS ------------------------
     | Routes to contact the core TEAM, must be authed & verified
     */
 
     Route::get('contact-core', 'ContactController@getCoreMailing')->name('contact-core-get');
     Route::post('contact-core', 'ContactController@postCoreMailing')->name('contact-core-post');
+    
+    /***
+    |---------------- FOR REGISTERED USERS ------------------------
+    | Routes to contact Eutranet, must be authed & verified
+    */
+
+    Route::get('contact-eutranet', 'ContactController@getContactEutranet')->name('contact-eutranet-get');
+    Route::post('contact-eutranet', 'ContactController@postContactEutranet')->name('contact-eutranet-post');
 
 
     /***
-    |---------------- SEND A MAILING TO TEAM ------------------------
-    | Routes to contact the core TEAM, must be authed & verified
+    |---------------- FOR REGISTERED USERS ------------------------
+    | Routes to send a mailing to MY TEAM, must be authed & verified
     */
 
     Route::get('contact-my-team', 'ContactController@getTeamMailing')->name('get-team-mailing');
@@ -42,7 +50,7 @@ Route::prefix('contact')->group(function() {
 
     /***
     |---------------- SEND A MAILING TO WEBMASTER ---------------------
-    | Routes to contact the core TEAM, must be authed & verified
+    | Routes to contact the webmaster, must be authed & verified
     */
 
     Route::get('contact-webmaster', 'ContactController@getContactWebmaster')->name('contact-webmaster-get');

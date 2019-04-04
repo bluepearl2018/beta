@@ -3,7 +3,7 @@
 namespace Modules\Contact\Emails;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Emails\Mailable;
+use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use \App\User;
@@ -46,7 +46,7 @@ class MessageSent extends Mailable
         // TODO check ->bcc to admin
         
         return $this->from('from@example.com')
-        ->view('contact::emails.message_sent')
+        ->view('contact::emails.messageSent')
         ->with([
             'subject' => $this->subject,
             'body' => $this->body,

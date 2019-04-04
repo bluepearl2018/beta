@@ -6,6 +6,7 @@ namespace Modules\Contact\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Contact\Entities\Contact;
 
 use App\Http\Controllers\Controller as HttpController;
 use Modules\Profile\Entities\UserMessage;
@@ -21,9 +22,9 @@ use Validator;
 use Session;
 
 use Illuminate\Support\Facades\Mail;
-use Modules\Contact\Mail\MessageSent;
-use Modules\Contact\Mail\TeamMailingSent;
-use Modules\Contact\Mail\AnonymousMessageSent;
+use Modules\Contact\Emails\MessageSent;
+use Modules\Contact\Emails\TeamMailingSent;
+use Modules\Contact\Emails\AnonymousMessageSent;
 
 class ContactController extends HttpController
 {
@@ -33,14 +34,39 @@ class ContactController extends HttpController
      */
     public function index()
     {
-        return view('contact::index');
+        
+        $contactPages = Contact::all();
+        return view('contact::index')->with(compact('contactPages'));
     }
     public function __construct(){
         
     }
 
     /**************************************************************
-    | ------------ CONTACT EUTRANET (GENERAL EMAIL) --------------- |
+    | ------------ CONTACT (GENERAL EMAIL) --------------- |
+    ***************************************************************/
+    
+    public function getContact()
+    {
+        return view('contact::partials.contact.contact');
+    }
+    public function postContact(Request $request)
+    {
+        // TODO make validation
+        // dd($request->subject);
+        $recipient = 'stephane.maissin@gmail.com';
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $sender = $request->firstname.' '.$request->surname;
+        Mail::to(['contact.us@eutranet.com'])
+        ->cc($request->email)
+        ->send(new AnonymousMessageSent(
+            $request->firstname, $request->surname, $request->phone,
+            $request->email, $request->subject, $request->body, $sender, $ip, $recipient));
+        return redirect('/contact');
+    }
+
+    /**************************************************************
+    | ------------ CONTACT EUTRANET ACCORDING USER'S LANGUAGE ---- |
     ***************************************************************/
     
     public function getContactEutranet()

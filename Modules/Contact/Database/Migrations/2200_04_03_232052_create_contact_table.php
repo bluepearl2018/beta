@@ -18,6 +18,7 @@ class CreateContactTable extends Migration
             $table->longText('meta')->default(NULL)->nullable();
             $table->unsignedInteger('module_id')->nullable()->index();
             $table->string('slug');
+            $table->string('icon', 40)->nullable();
             $table->unsignedInteger('parent_id')->default(NULL)->nullable();
             $table->text('title');
             $table->text('lead');
@@ -36,11 +37,12 @@ class CreateContactTable extends Migration
         // Add page Categories
         DB::table('contact')->insert(
             array(
-                array('meta' => 'Meta values','module_id' => NULL,'slug' => 'contact-eutranet','parent_id' => NULL,'title' => 'Contact Eutranet','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
-                array('meta' => 'Meta values','module_id' => NULL,'slug' => 'contact-webmaster','parent_id' => NULL,'title' => 'Report a bug','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
-                array('meta' => 'Meta values','module_id' => NULL,'slug' => 'contact-my-team','parent_id' => NULL,'title' => 'Contact my team','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
-                array('meta' => 'Meta values','module_id' => NULL,'slug' => 'contact-a-pool-manager','parent_id' => NULL,'title' => 'Contact a pool manager','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
-                array('meta' => 'Meta values','module_id' => NULL,'slug' => 'contact-core','parent_id' => NULL,'title' => 'Contact a pool manager','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'envelope', 'slug' => 'contact','parent_id' => NULL,'title' => 'Contact Eutranet','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'bolt', 'slug' => 'contact-eutranet','parent_id' => NULL,'title' => 'Contact Eutranet','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'bug', 'slug' => 'contact-webmaster','parent_id' => NULL,'title' => 'Report a bug','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'mail-bulk', 'slug' => 'contact-my-team','parent_id' => NULL,'title' => 'Contact my team','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'star', 'slug' => 'contact-a-pool-manager','parent_id' => NULL,'title' => 'Contact a pool manager','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
+                array('meta' => 'Meta values','module_id' => NULL,'icon' => 'phone', 'slug' => 'contact-core','parent_id' => NULL,'title' => 'Contact a pool manager','lead' => 'lead','content' => 'content','image' => NULL,'status' => 'draft','user_id' => '1','lft' => NULL,'rgt' => NULL,'depth' => NULL,'deleted_at' => NULL,'created_at' => NULL,'updated_at' => NULL),
             )
         );
     }

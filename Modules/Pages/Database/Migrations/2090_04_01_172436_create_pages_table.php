@@ -18,6 +18,7 @@ class CreatePagesTable extends Migration
             $table->longText('meta')->default(NULL)->nullable();
             $table->unsignedInteger('module_id')->nullable()->index();
             $table->string('slug');
+            $table->string('icon', 40)->nullable();
             $table->unsignedInteger('parent_id')->default(NULL)->nullable();
             $table->text('title');
             $table->text('lead');
