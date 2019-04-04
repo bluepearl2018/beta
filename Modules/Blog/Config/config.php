@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'Blog'
+    'name' => 'Blog',
+    'color' => '#456123'
 ];

@@ -59,7 +59,10 @@ class BlogController extends Controller
         if(!empty($slug))
         {
             $articleData = $this->blogRepository->showArticleCategory($slug);
-            return view('blog::show', ['articleData' => $articleData]);    
+            if($articleData){
+                return view('blog::show', ['articleData' => $articleData]);    
+            }
+            abort('404');
         }
         return $this->showBlogCategory($category);
     }
@@ -72,8 +75,11 @@ class BlogController extends Controller
     public function showBlogCategory($blogCategory)
     {
         $categoryData = $this->blogRepository->showArticleCategory($blogCategory);
-        $blogCategories = $categoryData->children;
-        return view('blog::partials.blogList')->with(compact('categoryData', 'blogCategories'));
+        if($categoryData){
+            $blogCategories = $categoryData->children;
+            return view('blog::partials.blogList')->with(compact('categoryData', 'blogCategories'));
+        }
+        abort('404');
     }
 
     /**

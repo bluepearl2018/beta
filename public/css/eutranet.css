@@ -94,3 +94,7 @@ strong {
 #toolbar span {
     color: #dedede;
 }
+
+.side-left-menu li h5 {
+    font-size: 0.89rem;
+}

@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-       @include('components.head')
-    </head>
-    <body>
-        @include('components.header')
-        @include('components.main')
-        @include('components.footer')
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/welcome.js') }}"></script> --}}
-    </body>
-</html>
+@extends('layouts.app')
+@section('pageTitle')@include('welcome::partials.welcomePageTitle')@endsection
+@section('pageDescription')@include('welcome::partials.welcomePageDescription')@endsection
+@section('pageKeywords')@include('welcome::partials.welcomePageKeywords')@endsection
+@section('menu')@include('welcome::partials.welcomePageMenu')@endsection
+@section('breadcrumbs')@include('welcome::partials.welcomePageBreadcrumbs')@endsection
+@section('image')@endsection
+@section('aside')@endsection

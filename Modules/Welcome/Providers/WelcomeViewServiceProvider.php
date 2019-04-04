@@ -16,13 +16,31 @@ class WelcomeViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Using class based composers...
         View::composer(
-            ['welcome::index'], \Modules\Blog\Http\ViewComposers\BlogLatestNewsBoxComposer::class
+            'welcome::partials.welcomePageMenu', \Modules\Welcome\Http\ViewComposers\WelcomePageMenuComposer::class
+        );
+
+        View::composer(
+            'welcome::index', \Modules\Welcome\Http\ViewComposers\WelcomePageListComposer::class
+        );
+
+        View::composer(
+            ['welcome::partials.welcomePageBreadcrumbs'], \Modules\Welcome\Http\ViewComposers\WelcomePageBreadcrumbsComposer::class
+        );
+
+        View::composer(
+            ['welcome::partials.welcomePageTitle'], \Modules\Welcome\Http\ViewComposers\WelcomePageTitleComposer::class
         );
         
         View::composer(
-            'welcome::partials.welcomeMenu', 'Modules\Welcome\Views\Composers\WelcomeMenuComposer'
+            ['welcome::partials.welcomePageDescription'], \Modules\Welcome\Http\ViewComposers\WelcomePageDescriptionComposer::class
         );
+        
+        View::composer(
+            ['welcome::partials.welcomePageKeywords'], \Modules\Welcome\Http\ViewComposers\WelcomePageKeywordsComposer::class
+        );
+
     }
     
     /**

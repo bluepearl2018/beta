@@ -1,5 +1,4 @@
 @extends('blog::layouts.master')
-
 @section('content')
     <h1>@lang('blog.blogTitle')</h1>
     <p class="lead">

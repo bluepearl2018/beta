@@ -15,11 +15,13 @@ class AddModules extends Migration
     {
         DB::table('modules')->insert(
             array(
-                array('id' => '1','name' => 'UiTables','slug' => 'uitables','icon' => 'table'),
-                array('id' => '2','name' => 'Splash','slug' => 'splash', 'icon' => 'splash'),
-                array('id' => '3','name' => 'Welcome','slug' => 'welcome', 'icon' => 'home'),
-                array('id' => '4','name' => 'Blog','slug' => 'blog', 'icon' => 'rss')
-            )
+                array('id' => '1','slug' => 'uitables','name' => 'UiTables','icon' => 'table','description' => NULL,'front_status' => 'off','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL),
+                array('id' => '2','slug' => 'splash','name' => 'Splash','icon' => 'splash','description' => NULL,'front_status' => 'off','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL),
+                array('id' => '3','slug' => 'welcome','name' => 'Welcome','icon' => 'home','description' => NULL,'front_status' => 'on','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL),
+                array('id' => '4','slug' => 'blog','name' => 'Blog','icon' => 'rss','description' => NULL,'front_status' => 'on','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL),
+                array('id' => '5','slug' => 'pages','name' => 'About Eutranet','icon' => 'question-circle','description' => 'Toutes les questions que vous vous proposez à notre propos','front_status' => 'on','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL),
+                array('id' => '6','slug' => 'contact','name' => 'Contact','icon' => 'envelope','description' => 'Fonctionnalités de messagerie','front_status' => 'on','back_status' => 'on','status' => 'dev','created_at' => NULL,'updated_at' => NULL,'deleted_at' => NULL)
+              )
         );
     }
 

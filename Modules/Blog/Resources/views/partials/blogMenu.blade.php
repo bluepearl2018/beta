@@ -1,6 +1,6 @@
 @isset($blogMenu)
     @if ($blogMenu->count())
-    <ul id="blog-accordion" class="navbar-expand-md py-2 list-group" 
+    <ul id="blog-accordion" class="navbar-expand-md py-2 list-group side-left-menu" 
     style="border:none!important">
         @foreach ($blogMenu as $k => $menu_item)
             <li class="py-1 border-0"

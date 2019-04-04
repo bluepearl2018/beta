@@ -17,11 +17,15 @@ class CreateModulesTable extends Migration
             $table->increments('id');
             $table->text('slug');
             $table->text('name');
-            $table->string('icon', '10')->unique();
+            $table->string('icon', '40')->unique();
             $table->text('description')->nullable();
+            $table->text('image')->nullable();
             $table->enum('front_status', ['on', 'off'])->default('off');
             $table->enum('back_status', ['on', 'off'])->default('on');
             $table->enum('status', ['dev', 'test', 'on', 'off'])->default('dev');
+            $table->integer('lft')->unsigned()->nullable();
+            $table->integer('rgt')->unsigned()->nullable();
+            $table->integer('depth')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
