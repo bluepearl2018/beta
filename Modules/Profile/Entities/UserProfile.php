@@ -57,6 +57,10 @@ class UserProfile extends Model
         return $this->belongsTo('\App\Models\Country');
     }
     
+    public function user(){
+        return $this->hasOne('\App\Models\User');
+    }
+    
     /*
     |--------------------------------------------------------------------------
     | SCOPES

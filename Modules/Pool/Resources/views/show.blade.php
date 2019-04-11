@@ -1,41 +1,58 @@
 @extends('pool::layouts.master')
 @section('aside')
     <ul class="nav nav-pills nav-fill py-3" role="tablist">
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link rounded active" id="project-managers-pill" data-toggle="pill" href="#project-managers" 
+        <li class="nav-item m-1 rounded border" style="background-color: silver">
+            <a class="nav-link bg-secondary rounded active" id="project-managers-pill" data-toggle="pill" href="#project-managers" 
             role="tab" aria-controls="project-managers" aria-selected="true">
-                <i class="fa fa-user"></i>
-                @lang('pool.projectManagers')
+                <i class="fa fa-user-tie"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.projectManagers')
+                </div>
             </a>
         </li>
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link" id="academics-pill" data-toggle="pill" href="#academics" 
+        <li class="nav-item m-1 rounded border" style="background-color: silver">
+            <a class="nav-link bg-secondary" id="academics-pill" data-toggle="pill" href="#academics" 
             role="tab" aria-controls="academics" aria-selected="false">
-                @lang('pool.academics')
+                <i class="fa fa-user-graduate"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.academics')
+                </div>
             </a>
         </li>
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link" id="translators-pill" data-toggle="pill" href="#translators" 
+        <li class="nav-item m-1 rounded border" style="background-color: silver">
+            <a class="nav-link bg-secondary" id="translators-pill" data-toggle="pill" href="#translators" 
             role="tab" aria-controls="translators" aria-selected="false">
-                @lang('pool.translators')
+                <i class="fa fa-language"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.translators')
+                </div>
             </a>
         </li>
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link" id="developers-pill" data-toggle="pill" href="#developers" 
+        <li class="nav-item m-1 rounded border" style="background-color: silver">
+            <a class="nav-link bg-secondary" id="developers-pill" data-toggle="pill" href="#developers" 
             role="tab" aria-controls="developers" aria-selected="false">
-                @lang('pool.developers')
+                <i class="fa fa-user-cog"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.developers')
+                </div>
             </a>
         </li>
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link" id="dtpers-pill" data-toggle="pill" href="#dtpers" 
+        <li class="nav-item m-1 rounded border" style="background-color: silver">
+            <a class="nav-link bg-secondary" id="dtpers-pill" data-toggle="pill" href="#dtpers" 
             role="tab" aria-controls="dtpers" aria-selected="false">
-                @lang('pool.dtpers')
+                <i class="fa fa-user-tag"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.dtpers')
+                </div>
             </a>
         </li>
-        <li class="nav-item m-1 rounded">
-            <a class="nav-link" id="resources-pill" data-toggle="pill" href="#resources" 
+        <li class="nav-item m-1 rounded border">
+            <a class="nav-link bg-secondary" id="resources-pill" data-toggle="pill" href="#resources" 
             role="tab" aria-controls="resources" aria-selected="false">
-                @lang('pool.resources')
+                <i class="fa fa-briefcase-medical"></i>
+                <div class="d-none d-md-inline-block">
+                    @lang('pool.resources')
+                </div>
             </a>
         </li>
     </ul>

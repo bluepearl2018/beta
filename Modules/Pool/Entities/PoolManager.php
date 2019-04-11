@@ -53,7 +53,7 @@ class PoolManager extends Model
 
     public function userProfile()
     {
-        return $this->belongsTo(\App\Models\User::class, 'manager_id');
+        return $this->belongsTo(\Modules\Profile\Entities\UserProfile::class, 'manager_id');
     }
 
     public function language()

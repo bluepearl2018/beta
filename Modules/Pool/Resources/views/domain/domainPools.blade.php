@@ -1,4 +1,4 @@
-@extends('doc::layouts.master')
+@extends('pool::layouts.master')
 
 @section('pageTitle')
     {{ $domain->name }}
@@ -8,8 +8,9 @@
     {{ $domain->keywords }}
 @endsection
 
-@include('flash::message')	
 @section('content')
+<div class="p-3">
+@include('flash::message')	
 <h1><span class=" fa fa-users"></span>
     <strong>
         {{ $domain->name }}
@@ -17,25 +18,26 @@
 </h1>
 <p class="lead">
     {{ $domain->lead }}
-    @lang('pool.thisListPoolsInDomain')
 </p>
  
 @if(isset($childrenpools))
     @php($i = 0)
     @forelse($childrenpools as $pool)
         <?php $subpools[$i] = \Modules\Pool\Entities\Pool::where('parent_id', $pool->id)->get(); ?>
-        <div class="row no-gutters container mb-3 px-2">
-            <div class="col-md-12">
-                <div class="row border border-right">
-                    <div class="col-md-7 border-right" style="background-color:#ededed">
-                        <h4 class="d-inline-block py-2 mb-0 ">
-                            <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" class="text-dark">
-                                <span class="fa fa-users mr-2"></span>
-                                {{ $pool->name }}
-                            </a>
-                        </h4>
-                        @include('pool::nav.navFromStatistics')
-                        
+        <div class="row-fluid no-gutters justify-content-between m-0 p-0 mb-3 d-flex flex-md-row flex-column">
+            <div class="col-md-7 mr-auto">
+                <div class="card">
+                    <h4 class="card-header" style="background-color:teal">
+                        <i class="fa fa-users"></i>
+                        <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
+                            class="text-light nav-item">
+                            {{ $pool->name }}
+                        </a>
+                    </h4>
+                    <div class="card-body">
+                        <div class="row-fluid">
+                            @include('pool::nav.navFromStatistics')
+                        </div>
                         @if(strlen($pool->description) < 160)
                             <p>
                                 {{ $pool->description }}
@@ -77,9 +79,11 @@
                             @lang('interface.discoverPool')
                         </a>
                     </div>
-                    <div class="col-md-5 bg-white" >
-                        @include('pool::nav.navInteractionButtons')
-                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 ml-auto">
+                <div class="card">
+                    @include('pool::nav.navInteractionButtons')
                 </div>
             </div>
         </div>
@@ -87,4 +91,5 @@
             @lang('interface.noItemsToDisplay')
     @endforelse
 @endif
+</div>
 @endsection

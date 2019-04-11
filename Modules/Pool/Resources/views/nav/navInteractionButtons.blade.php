@@ -1,24 +1,23 @@
 <?php 
-$selectedLocale = Session::get('locale');
+$selectedLocale = App::getLocale();
 $sessionLanguageIds = \Modules\UiTables\Entities\Sourcelanguage::where('code', $selectedLocale)->select('id')->get();
 $nativePoolManager = \Modules\Pool\Entities\PoolManager::where('pool_id', $pool->id)->
 whereIn('language_id', $sessionLanguageIds)->first();
 ?>
+
 @isset($nativePoolManager)
-    <h6 class="d-inline-block mb-2 mt-3">
-            <img height="16" alt="{{ session('locale') }}" 
-            src="{!! asset('img/flags/'.session('locale').'.png') !!}" />
-            <strong>
-                    {{ $nativePoolManager->user->firstname }}
-                    {{ $nativePoolManager->user->surname }}</strong>
+    <h6 class="d-inline-block d-flex flex-md-column flex-row mb-2 mt-3">
+        <i><img height="16" alt="{{ $selectedLocale }}" 
+        src="{!! asset('img/flags/'.$selectedLocale.'.png') !!}" /></i>
+        <strong>
+                {{ $nativePoolManager->manager->firstname }}
+                {{ $nativePoolManager->manager->surname }}</strong>
+                {{ $nativePoolManager->manager->userProfile->phone }}
     </h6>
-    <a class="text-dark" href="tel:{{$nativePoolManager->user->userProfile->phone}}">
-            {{$nativePoolManager->user->userProfile->phone}}
-    </a>
     @auth
     <ul class="list-inline mt-2 mb-3">
         <li class="list-inline-item">    
-            <form id="getQuoteFromPM" action="/zones/contacts/contact-pool-manager" method="POST">
+            <form id="getQuoteFromPM" action="/contact/contact-pool-manager" method="POST">
                 @csrf
                 <input type="hidden" name="pool_name" 
                 value="{{ Crypt::encrypt($pool->code) }}" />

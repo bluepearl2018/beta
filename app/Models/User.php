@@ -84,7 +84,7 @@ class User extends OriginalUser
      **/
     public function jobs()
     {
-        return $this->morphToMany(\App\Models\Jobs::class, 'jobs');
+        return $this->morphToMany(\Modules\Jobs\Entities\Jobs::class, 'jobs');
     }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -92,7 +92,7 @@ class User extends OriginalUser
 
     public function userProfile()
     {
-        return $this->hasOne(\App\Models\UserProfile::class, 'user_id');
+        return $this->hasOne(\Modules\Profile\Entities\UserProfile::class, 'user_id');
     }
     
     /**
@@ -105,17 +105,17 @@ class User extends OriginalUser
 
     public function languagePairs()
     {
-        return $this->hasMany(\App\Models\UserLanguagePair::class, 'user_id');
+        return $this->hasMany(\Modules\Profile\Entities\UserLanguagePair::class, 'user_id');
     }
 
 
     public function belongsToManyTeams()
     {
-        return $this->belongsToMany('App\Models\UserTeam', 'user_id');
+        return $this->belongsToMany('\Modules\Profile\Entities\UserTeam', 'user_id');
     }
 
     public function hasManyUsersInTeam(){
-        return $this->hasMany('App\Models\UserTeam', 'recruiter_id');
+        return $this->hasMany('\Modules\Profile\Entities\UserTeam', 'recruiter_id');
     }
     /*
     |--------------------------------------------------------------------------
