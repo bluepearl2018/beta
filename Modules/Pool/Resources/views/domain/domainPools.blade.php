@@ -24,19 +24,19 @@
     @php($i = 0)
     @forelse($childrenpools as $pool)
         <?php $subpools[$i] = \Modules\Pool\Entities\Pool::where('parent_id', $pool->id)->get(); ?>
-        <div class="row-fluid no-gutters justify-content-between m-0 p-0 mb-3 d-flex flex-md-row flex-column">
-            <div class="col-md-7 mr-auto">
-                <div class="card">
-                    <h4 class="card-header" style="background-color:teal">
-                        <i class="fa fa-users"></i>
-                        <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
-                            class="text-light nav-item">
-                            {{ $pool->name }}
-                        </a>
-                    </h4>
-                    <div class="card-body">
-                        <div class="row-fluid">
-                            @include('pool::nav.navFromStatistics')
+            <div class="card mb-3">
+                <h4 class="card-header" style="background-color:teal">
+                    <i class="fa fa-users"></i>
+                    <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
+                        class="text-light nav-item">
+                        {{ $pool->name }}
+                    </a>
+                </h4>
+                <div class="d-flex flex-md-row flex-column">
+                    <div class="card-body col-md-6">
+                        <img  class="card-image img-fluid" src="https://via.placeholder.com/650x150" />
+                        <div class="bg-dark"> 
+                            @include('pool::nav.navFromStatistics')    
                         </div>
                         @if(strlen($pool->description) < 160)
                             <p>
@@ -74,19 +74,20 @@
                             </div>
                             </div>
                         @endif
-                        <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
-                            class="text-dark mb-3 d-inline-block">
-                            @lang('interface.discoverPool')
-                        </a>
+                    </div>
+                    <div class="card-body col-md-6">
+                        <div class="card">
+                            @include('pool::nav.navInteractionButtons')
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-5 ml-auto">
-                <div class="card">
-                    @include('pool::nav.navInteractionButtons')
+                <div class="card-footer text-center p-0">
+                    <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
+                        class="nav-link">
+                        @lang('interface.discoverPool')
+                    </a>
                 </div>
             </div>
-        </div>
         @empty
             @lang('interface.noItemsToDisplay')
     @endforelse

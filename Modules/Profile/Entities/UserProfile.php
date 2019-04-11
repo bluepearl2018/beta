@@ -4,11 +4,15 @@ namespace Modules\Profile\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 // use Backpack\CRUD\CrudTrait;
+use Spatie\Translatable\HasTranslations;
+use Backpack\CRUD\CrudTrait;
 
 class UserProfile extends Model
 {
-    // // use CrudTrait;
-
+     use CrudTrait;
+    // use Sluggable;
+    // use SluggableScopeHelpers;
+    use HasTranslations;
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -32,9 +36,14 @@ class UserProfile extends Model
         'phone',
         'mobile',
         'secondaryemail',
-        'VAT'
+        'VAT',
+        'description', 
+        'short_description'
     ];
 
+    protected $translatable = [
+        'description', 'short_description'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 
