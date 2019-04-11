@@ -17,7 +17,7 @@
 </h1>
 <p class="lead">
     {{ $domain->lead }}
-    @lang('pools.thisListPoolsInDomain')
+    @lang('pool.thisListPoolsInDomain')
 </p>
  
 @if(isset($childrenpools))

@@ -1,6 +1,6 @@
 
 <h2 class="card-header bg-secondary">
-        @lang('pools.contactAcademicsDirectly')
+        @lang('pool.contactAcademicsDirectly')
     </h2>
     @php($ac=0)
     <div class="card-columns">

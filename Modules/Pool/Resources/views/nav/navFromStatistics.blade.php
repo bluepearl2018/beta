@@ -9,14 +9,14 @@ $countTranslatorsInPool[$i] = \Modules\Pool\Entities\PoolLinguist::where('pool_i
         <a href="/zones/pools/{!! $pool->parentPool->code !!}/{{ $pool->code }}">
             <span class="badge badge-dark text-light d-inline-block"> 
                     {{ $countTranslatorsInPool[$i] }} 
-                    @lang('pools.translators')</span>
+                    @lang('pool.translators')</span>
         </a>
     </li>
     @elseif($countTranslatorsInPool[$i] == 0)
     <li class="list-inline-item">
         <span class="badge badge-default border text-dark d-inline-block"> 
             <i class="fa fa-exclamation-triangle"></i>
-            @lang('pools.thisPoolRecruits')
+            @lang('pool.thisPoolRecruits')
         </span>
     </li>
     

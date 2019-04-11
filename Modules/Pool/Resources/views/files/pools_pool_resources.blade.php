@@ -1,8 +1,8 @@
 <h2>
-    @lang('pools.downloadResourcesDirectly')
+    @lang('pool.downloadResourcesDirectly')
 </h2>
 <p class="alert alert-warning">
-    @lang('pools.tipDownloadResourcesDirectly')
+    @lang('pool.tipDownloadResourcesDirectly')
 </p>
-<h3>@lang('pools.freeResources')</h3>
-<h3>@lang('pools.paidResources')</h3>
+<h3>@lang('pool.freeResources')</h3>
+<h3>@lang('pool.paidResources')</h3>

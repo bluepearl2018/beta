@@ -4,7 +4,7 @@
 @endif
 <div class="form-group">
     <select id="selectMainPools" name="selectMainPools" class="form-control {{ $errors->has('selectMainPools') ? ' is-invalid' : '' }}" required>
-        <option value="" selected required>@lang('pools.selectMainPool')</option>
+        <option value="" selected required>@lang('pool.selectMainPool')</option>
         @foreach($selectMainPools as $keyMainPool => $mainPool )
             <option value="{{ $mainPool->slug }}" {{ (old("selectMainPools") == $mainPool->slug ? "selected":"") }} required>{{ $mainPool->name }}</option>
         @endforeach
@@ -21,7 +21,7 @@
         @if(old('pool_id'))
             <option value="{{ $selectedPool->id }}" {{ (old('pool_id') == $selectedPool->id ? "selected":"") }} required>{{ $selectedPool->name }}</option>
         @else
-        <option value="" required>@lang('pools.selectSubPool')</option>
+        <option value="" required>@lang('pool.selectSubPool')</option>
         @endif
     </select>
     @if ($errors->has('pool_id'))
@@ -47,8 +47,8 @@
             if(domain == '') {
                 
                 $('select[name="pool_id"]').empty();
-                $('select[name="selectMainPools"]').append('<option value="" selected required>@lang('pools.selectMainPool')</option>');
-                $('select[name="pool_id"]').append('<option value="" selected required>@lang('pools.selectSubPool')</option>');
+                $('select[name="selectMainPools"]').append('<option value="" selected required>@lang('pool.selectMainPool')</option>');
+                $('select[name="pool_id"]').append('<option value="" selected required>@lang('pool.selectSubPool')</option>');
                 
             }
             else {
@@ -59,7 +59,7 @@
                         $('select[name="pool_id"]').empty();
                         var c = 0;
                         console.log(data);
-                        $('select[name="pool_id"]').append('<option> @lang('pools.selectSubPool') </option>');
+                        $('select[name="pool_id"]').append('<option> @lang('pool.selectSubPool') </option>');
                         $.each(data, function(id, name) {
                             $('select[name="pool_id"]').append('<option value="'+ data[c].slug +'" required>'+ data[c]['name']['{{\App::getLocale()}}'] +'</option>');
                             c++;

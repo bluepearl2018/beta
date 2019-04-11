@@ -1,3 +1,3 @@
 <div class="card">
-    <span>@lang('pools.statisticsCardTitle')</span>
+    <span>@lang('pool.statisticsCardTitle')</span>
 </div>

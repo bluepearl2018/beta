@@ -1,6 +1,6 @@
 
 <h2 class="card-header bg-secondary">
-        @lang('pools.contactDtpersDirectly')
+        @lang('pool.contactDtpersDirectly')
     </h2>
     @php($iz=0)
     <div class="card-columns">

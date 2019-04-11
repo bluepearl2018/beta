@@ -1,11 +1,11 @@
 @extends('pool::layouts.master')
 @section('content')
-    <h1>@lang('pools.poolModuleTitle')</h1>
+    <h1>@lang('pool.poolModuleTitle')</h1>
     <p class="lead">
-        @lang('pools.poolModuleLead')
+        @lang('pool.poolModuleLead')
     </p>
     <p>
-        @lang('pools.poolModuleContent')
+        @lang('pool.poolModuleContent')
     </p>
     @isset($poolsData)
         @include('pool::domain.domainPools')

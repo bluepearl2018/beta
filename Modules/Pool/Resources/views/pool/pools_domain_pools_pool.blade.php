@@ -23,7 +23,7 @@
         <!-- Button trigger modal -->
         <a href="#" class="" 
         data-toggle="modal" data-target="#longDescription">
-        @lang('pools.readMore')
+        @lang('pool.readMore')
         </a>
     </p>
     
@@ -68,37 +68,37 @@
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link rounded active" id="project-managers-pill" data-toggle="pill" href="#project-managers" 
                     role="tab" aria-controls="project-managers" aria-selected="true">
-                        @lang('pools.projectManagers')
+                        @lang('pool.projectManagers')
                     </a>
                 </li>
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link" id="academics-pill" data-toggle="pill" href="#academics" 
                     role="tab" aria-controls="academics" aria-selected="false">
-                        @lang('pools.academics')
+                        @lang('pool.academics')
                     </a>
                 </li>
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link" id="translators-pill" data-toggle="pill" href="#translators" 
                     role="tab" aria-controls="translators" aria-selected="false">
-                        @lang('pools.translators')
+                        @lang('pool.translators')
                     </a>
                 </li>
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link" id="developers-pill" data-toggle="pill" href="#developers" 
                     role="tab" aria-controls="developers" aria-selected="false">
-                        @lang('pools.developers')
+                        @lang('pool.developers')
                     </a>
                 </li>
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link" id="dtpers-pill" data-toggle="pill" href="#dtpers" 
                     role="tab" aria-controls="dtpers" aria-selected="false">
-                        @lang('pools.dtpers')
+                        @lang('pool.dtpers')
                     </a>
                 </li>
                 <li class="nav-item m-1 rounded">
                     <a class="nav-link" id="resources-pill" data-toggle="pill" href="#resources" 
                     role="tab" aria-controls="resources" aria-selected="false">
-                        @lang('pools.resources')
+                        @lang('pool.resources')
                     </a>
                 </li>
             </ul>

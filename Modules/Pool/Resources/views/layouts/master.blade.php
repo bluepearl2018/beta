@@ -15,7 +15,7 @@
     @include('pool::partials.poolBreadcrumbs')
 @endsection
 @section('image')
-    <img src="{{ asset('/uploads/categories/elevator-1598431_1280.jpg' )}}" class="img-fluid" alt="Eutranet, @lang('pools.poolModuleTitle')" />
+    <img src="{{ asset('/uploads/categories/elevator-1598431_1280.jpg' )}}" class="img-fluid" alt="Eutranet, @lang('pool.poolModuleTitle')" />
 @endsection
 @section('aside')
     @guest
