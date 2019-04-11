@@ -29,7 +29,7 @@ $selectSrcLang = \Modules\UiTables\Entities\Sourcelanguage::all();
             var sourceLang_id = $(this).val();
             if(sourceLang_id) {
                 $.ajax({
-                    url: 'http://localhost:8000/tgtLangSelector/ajax/'+sourceLang_id,
+                    url: '/uitables/tgtLangSelector/ajax/'+sourceLang_id,
                     dataType: 'json',
                     success:function(data) {
                         $('select[id="targetLang_id"]').empty();

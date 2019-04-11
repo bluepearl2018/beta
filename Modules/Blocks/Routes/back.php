@@ -12,5 +12,5 @@
 */
 
 Route::prefix('/blocks')->group(function() {
-    Route::resource('admin', 'BlocksAdminController')->middleware('back');
+    Route::resource('admin', 'BlocksAdminController')->middleware('admin');
 });

@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/uitables/tgtLangSelector/ajax/{sourceLang_id}',array('as'=>'tgtLangSelector.ajax','uses'=>'\Modules\UiTables\Http\Controllers\LanguagePairController@ajaxLangPairSelector'));
+Route::get('/pools/poolSelector/ajax/{domain}',array('as'=>'ajaxPoolSelector.ajax','uses'=>'\Modules\Pool\Http\Controllers\PoolController@ajaxPoolSelector'));
+

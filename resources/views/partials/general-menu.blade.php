@@ -1,30 +1,39 @@
-@isset($modules)
-    <nav class="navbar navbar-expand-lg navbar-light p-0 px-2 border-bottom">
-        <div id="general-menu" class="collapse navbar-collapse mr-auto px-2 text-dark">
-            <ul class="navbar-nav text-dark w-100" style="z-index:9999; font-size:0.85rem">            
+@if(!Request::is('/'))
+    @isset($modules)
+        <div id="general-menu" class="collapse show">
+            <ul class="d-flex text-left row-no-gutters bg-secondary container-fluid m-0 py-2">
             @if ($modules->count())
                 @foreach ($modules->where('front_status', 'on') as $data => $module)
-                    <li class="nav-item @if ($loop->last)mr-auto @endif">
-                        <a href="/{{ $module->slug }}" class="nav-link text-dark">
-                            <span class="rounded p-1 text-light text-dark font-weight-normal border"><small>
-                            <i class="fa fa-{{$module->icon}} mr-1 text-dark"></i>
-                            </small>
-                            {{ $module->name }}
-                        </span>
-                        </a>
-                    </li>
+                    <div class="col-md-3 @if ($loop->last)mr-auto @endif">
+                        <h3 href="/{{ $module->slug }}" class="text-dark">
+                            <span class="rounded pb-1">
+                                <i class="fa fa-{{$module->icon}} mr-1 text-dark"></i>
+                                {{ $module->name }}
+                            </span>
+                        </h3>
+                    </div>
                 @endforeach
-                    <li class="nav-item ml-auto">
-                        <a href="/pages/about/job-offers/win-win-deal-for-go-live" class="nav-link text-dark">
-                            <span class="rounded p-1 text-light text-dark font-weight-normal border"><small>
-                            <i class="fa fa-exclamation-circle mr-1 text-dark"></i>
-                            </small>
-                            Offre de lancement
-                        </span>
+                    <li class="nav-item ml-md-auto">
+                        <a href="/pages/about/job-offers/win-win-deal-for-go-live" class="navbar-link text-dark">
+                            <span class="rounded px-2 pb-1 border">
+                                <i class="fa fa-exclamation-circle mr-1 text-dark"></i>
+                                Offre de lancement
+                            </span>
                         </a>
                     </li>
+                    @guest
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a href="{{ route('register') }}" class="navbar-link text-dark" title="@lang('interface.register')">
+                                    <span class="rounded px-2 pb-1 border">
+                                        @lang('interface.register')
+                                    </span>
+                                </a>
+                            </li>
+                        @endif
+                    @endguest
             @endif
             </ul>
         </div>
-    </nav>
-@endisset
+    @endisset
+@endif

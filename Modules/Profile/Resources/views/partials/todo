@@ -1,0 +1,9 @@
+// ALERTES
+Liste des alertes et flash des contrôleurs sous JSON 
+
+// PROFIL PUBLIC
+LEs fonctions sont activées 
+                    // selon le niveau d'itneraction associé au profil
+                    // selon le rôle 
+                    // selon le niveau d'abonnement
+                    // L'incomplétude du profil est rhédibitoire est condamne toute possibilité d'interaction

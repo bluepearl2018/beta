@@ -22,7 +22,7 @@ class WelcomeViewServiceProvider extends ServiceProvider
         );
 
         View::composer(
-            'welcome::index', \Modules\Welcome\Http\ViewComposers\WelcomePageListComposer::class
+            'welcome::index', \Modules\Welcome\Http\ViewComposers\WelcomePageComposer::class
         );
 
         View::composer(

@@ -73,7 +73,7 @@ class Organization extends Model
 
     public function organization_category()
     {
-        return $this->belongsTo('App\Models\OrganizationCategory', 'organization_category_id', 'id');
+        return $this->belongsTo('Modules\UiTables\Entities\OrganizationCategory', 'organization_category_id', 'id');
     }
     
     public function organization_target_role()

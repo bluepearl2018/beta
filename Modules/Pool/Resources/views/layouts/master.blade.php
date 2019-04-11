@@ -1,0 +1,24 @@
+@extends('home')
+@section('menu')
+    @include('pool::partials.poolMenu')
+@endsection
+@section('pageTitle')
+    @include('pool::partials.poolPageTitle')
+@endsection
+@section('pageDescription')
+    @include('pool::partials.poolPageDescription')
+@endsection
+@section('pageKeywords')
+    @include('pool::partials.poolPageKeywords')
+@endsection
+@section('breadcrumbs')
+    @include('pool::partials.poolBreadcrumbs')
+@endsection
+@section('image')
+    <img src="{{ asset('/uploads/categories/elevator-1598431_1280.jpg' )}}" class="img-fluid" alt="Eutranet, @lang('pools.poolModuleTitle')" />
+@endsection
+@section('aside')
+    @guest
+        @include('partials.login')
+    @endguest
+@endsection

@@ -1,32 +1,36 @@
 @isset($pageMenu)
     @if ($pageMenu->count())
-    <ul id="page-accordion" class="navbar-expand-md py-2 list-group side-left-menu" 
-    style="border:none!important">
-        @foreach ($pageMenu as $k => $menu_item)
-            @if($menu_item->slug !== 'welcome')
-            <li class="py-1 border-0"
-            style="border:none; border-bottom:solid 1px #555 !important;list-style:none!important"> 
-                <h5 class="pl-3 mb-0" id="heading{{ ucFirst($menu_item->slug) }}">
-                    <a class="nav-item 
-                    {{ ($menu_item->slug == Request::url())?' active':'' }}" 
-                    href="/pages/{{ $menu_item->slug }} "
-                    style="width:95%;">
-                    <strong style="color:#312a2a!important;">{{ $menu_item->title }} </strong>
+      <div id="accordion" class="container-fluid card-columns">
+            @foreach ($pageMenu as $k => $menu_item)
+                <div class="card mb-0 py-0 border-top"> 
+                    <a class="h2 mb-0 py-3 px-3 text-light d-block bg-primary {{ (Request::is('pages/'.$menu_item->slug.'*'))? 'font-weight-bold':'' }}" id="heading{{$menu_item->slug }}"  
+                    data-toggle="collapse" data-target="#collapse{{$menu_item->slug }}" 
+                    aria-expanded="{{ (Request::is('pages/'.$menu_item->slug))? 'true':'false' }}" 
+                    aria-controls="collapse{{$menu_item->slug }}">
+                        <span>
+                            {{ $menu_item->title }}
+                        </span>
                     </a>
-                    <span class="ml-auto mr-3 float-right text-right" 
-                    style="width:5%"
-                        role="button"
-                        data-toggle="collapse" 
-                        data-target="#collapse{{ ucFirst($menu_item->slug) }}" 
-                        aria-expanded="{{ ($k==0)?' true':' false' }}" 
-                        aria-controls="collapse{{ ucFirst($menu_item->slug) }}">
-                        <span class="fa fa-angle-right"></span>
-                    </span>
-                </h5>
-            </li>
-            @endif
-        @endforeach
-    </ul>
-    <!-- End page-accordion -->
+                    <div id="collapse{{$menu_item->slug }}" class="py-3 border-top {{ (Request::is('pages/'.$menu_item->slug.'*'))? 'show':'collapsed' }}"
+                         aria-labelledby="heading{{$menu_item->slug }}" 
+                         data-parent="#accordion">
+                        @if($menu_item->children)
+                            @foreach($menu_item->children as $child)
+                                <a class="nav-link m-0 py-0" href="/pages/{{ $child->parent->slug }}/{{ $child->slug }}"
+                                class="{{ (Request::is('pages/'.$menu_item->slug.'*'))? 'active text-light':'' }} nav-item text-muted p-0 font-weight-bold {{ (Request::is('pages/'.$menu_item->slug.'*'))? 'border-left pl-3 text-light':''}}" href="/pages/artlit/archi">
+                                <span class="align-top" style="color: rgb(10, 131, 152);">
+                                <span>[&nbsp;</span>
+                                <span style="color: rgb(43, 27, 27) !important;">
+                                    {{ $child->title }}
+                                </span>
+                                <span class="align-top" style="color: rgb(10, 131, 152);">::</span>
+                                </a>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="d-sm-inline-block clearfix"></div>
+            @endforeach
+     </div> 
     @endif
 @endisset

@@ -12,7 +12,7 @@
         "backpack/base": "^1.1",
         "backpack/crud": "^3.6",
         "barryvdh/laravel-debugbar": "^3.2",
-        "barryvdh/laravel-elfinder": "^0.4.1",
+        "barryvdh/laravel-elfinder": "^0.4.2",
         "codezero/laravel-unique-translation": "^1.1",
         "cviebrock/eloquent-sluggable": "^4.6",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
@@ -37,6 +37,7 @@
         "spatie/laravel-tags": "2.4.1",
         "spatie/laravel-translatable": "^4.0",
         "spatie/laravel-translation-loader": "^2.3",
+        "tightenco/parental": "^0.6.1",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {

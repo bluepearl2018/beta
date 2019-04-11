@@ -9,9 +9,9 @@
     @endif
     @if(isset($blogList))
         @include('blog::partials.blogLatestNewBox')
-        <div class="card-deck">
-            @php($i = 1)
-            @foreach($blogList->groupBy('parent_id', 'ASC') as $k)
+        @php($i = 1)
+        @foreach($blogList->groupBy('parent_id', 'ASC') as $k)
+            <div class="d-flex card-deck">
                 @foreach($k as $a)
                     <div class="card mt-3">
                         <h6 class="card-header">
@@ -31,7 +31,7 @@
                     @endif
                     @php($i++)
                 @endforeach
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     @endif
 @stop

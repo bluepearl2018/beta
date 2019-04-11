@@ -1,16 +1,21 @@
 @extends('welcome::layouts.master')
 @section('content')
     @include('flash::message')
-    <h1>@lang('welcome.title')</h1>
-    <p class="lead">@lang('welcome.lead')</p>
-    <div class="clearfix w-100">
+    <h1>{{ $currentPage->title }}</h1>
+    <p class="lead">
+    {{ $currentPage->lead }}
+    </p>
+    <div class="clearfix">
         @include('welcome::ctas.welcomeCtas')
     </div>
     @if(Module::has('blog'))
-        <div class="clearfix w-100">
+        <div class="clearfix">
             @include('blog::partials.blogLatestNewBox')
         </div>
     @endif
+    <div class="card-body border">
+        {{ $currentPage->content }}
+    </div>
 @endsection
 @section('aside')
         @if(! Module::has('pool'))

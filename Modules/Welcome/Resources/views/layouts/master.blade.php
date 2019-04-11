@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.welcome')
 @section('pageTitle')@include('welcome::partials.welcomePageTitle')@endsection
 @section('pageDescription')@include('welcome::partials.welcomePageDescription')@endsection
 @section('pageKeywords')@include('welcome::partials.welcomePageKeywords')@endsection

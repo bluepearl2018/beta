@@ -67,7 +67,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapBackRoutes()
     {
-        Route::middleware('back')
+        Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/back.php'));
     }

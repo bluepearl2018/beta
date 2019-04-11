@@ -82,6 +82,7 @@ return [
 
     'locale' => 'en',
     'locales' => ['en', 'fr'],
+    'serviceLocales' => ['en', 'fr', 'nl', 'es', 'de', 'it', 'ru', 'pt', 'se', 'dk', 'no', 'fi'],
     
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -228,6 +229,34 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // UI TABLES MODULE
+        'File' => \Modules\UiTables\Entities\File::class,
+        'FileType' => \Modules\UiTables\Entities\FileType::class,
+        'Organization' => \Modules\UiTables\Entities\Organization::class,
+        'OrganizationCategory' => \Modules\UiTables\Entities\OrganizationCategory::class,
+        'Service' => \Modules\UiTables\Entities\Service::class,
+        'ServiceCategory' => \Modules\UiTables\Entities\ServiceCategory::class,
+        'Socialmedia' => \Modules\UiTables\Entities\Socialmedia::class,
+        'Sourcelanguage' => \Modules\UiTables\Entities\Sourcelanguage::class,
+        'Targetlanguage' => \Modules\UiTables\Entities\Targetlanguage::class,
+        'Subscription' => \Modules\UiTables\Entities\Subscription::class,
+        'Tool' => \Modules\UiTables\Entities\Tool::class,
+        
+        // BLOG MODULE
+        'Article' => \Modules\Blog\Entities\Article::class,
+        
+        // PAGES MODULE
+        'Page' => \Modules\Pages\Entities\Page::class,
+
+        // POOL MODULE
+        'Pool' => \Modules\Pool\Entities\Pool::class,
+        'PoolAcademic' => \Modules\Pool\Entities\PoolAcademic::class,
+        'PoolDtper' => \Modules\Pool\Entities\PoolDtper::class,
+        'PoolFile' => \Modules\Pool\Entities\PoolFile::class,
+        'PoolGlossary' => \Modules\Pool\Entities\PoolGlossary::class,
+        'PoolLinguist' => \Modules\Pool\Entities\PoolLinguist::class,
+        'PoolManager' => \Modules\Pool\Entities\PoolManager::class,
+        'PoolMemory' => \Modules\Pool\Entities\PoolMemory::class,
     ],
 
 ];

@@ -1,22 +1,28 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Back Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register back routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "back" middleware group. Now create something great!
-|
-*/
+// --------------------------
+// Custom Backpack Routes
+// --------------------------
+// This route file is loaded automatically by Backpack\Base.
+// Routes you generate using Backpack\Generators will be placed here.
 
+Route::group([
+    'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => ['auth'],
+    'namespace'  => '\App\Http\Controllers\Admin',
+], function () { 
+    
+    /**
+     * custom admin routes 
+     * 
+     */ 
+    
+    CRUD::resource('/blog/articles', '\Modules\Blog\Http\Controllers\BlogArticleCrudController');
 
-Auth::routes();
-Route::resource('/admin', 'Admin\BackController');
-Route::resource('/admin/blocks', 'Admin\BackController');
-Route::resource('/admin/blog', 'Admin\BackController');
-Route::resource('/admin/contact', 'Admin\BackController');
-Route::resource('/admin/pages', 'Admin\BackController');
-Route::resource('/admin/uitables', 'Admin\BackController');
-
+    CRUD::resource('/pages', '\Modules\Pages\Http\Controllers\PagesAdminController');
+    CRUD::resource('/uitables/gender', '\Modules\UiTables\Http\Controllers\GenderAdminController');
+    
+    CRUD::resource('/pools', '\Modules\Pool\Http\Controllers\PoolAdminController');
+    
+    CRUD::resource('/pools/pool-managers', '\Modules\Pool\Http\Controllers\PoolManagersAdminController');
+}); // this should be the absolute last line of this file

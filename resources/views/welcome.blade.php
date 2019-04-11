@@ -1,99 +1,64 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+	@include('components.head')
+	<body>
+      <div id="app" class="container-fluid m-0 p-0"  style="background: url('/uploads/images/science-3334826_1920.jpg') no-repeat; background-size:cover; background-position:center bottom; min-height:860px">
+          <header class="d-flex row container-fluid m-0 p-0">
+              @include('components.header')
+          </header>
+          <main class="d-flex container-fluid m-0 p-0 h-100">
+                <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 text-center rounded px-3 my-3 mt-md-5" style="min-height:280px; background-color:rgba(158, 148, 120, 0.9);">
+                  <h1 class="mt-5">
+                    <span class="text-dark">
+                      @lang('splash.baseLine')
+                    </span>
+                  </h1>
+                  <h2 class="w-75 mx-auto mb-2 font-weight-normal">
+                    <span class="text-light">
+                      @lang('splash.sloganSub')
+                    </span>
+                  </h2>
+                  <div class="pt-1 mt-4">
+                    <div id="languageBarSplash" class="p-2 " aria-labelledby="selectedLanguageFlag">
+                      <ul id="flags" class="mx-auto list-inline w-100 text-center mb-0 d-md-inline-block">
+                        @foreach(config('app.locales') as $locale)
+                          @if($locale != session('locale'))
+                            <li class="list-inline-item">
+                              <a class="text-light m-0 d-block" 
+                              href="/setlocale/{{ $locale }}" title="{{$locale}}">
+                                <img class="img-fluid" width="16" height="16" 
+                                alt="{{ $locale }}"  
+                                src="{!! asset('img/flags/' . $locale . '.png') !!}" />
+                              </a>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </div>
+                    @if(is_null(app()->getLocale()))
+                      <div class="d-inline-block mx-auto p-0 form-group">
+                        <span>@lang('splash.selectYourLanguage') </span>
+                      </div>
+                    @elseif(!is_null(app()->getLocale()))
+                      <div class="d-inline-block mx-auto p-0 form-group">
+                        <a href="welcome" class="btn btn-outline-secondary text-light my-3 mx-1">
+                          @lang('splash.startVisit')
+                        </a>
+                        <a href="{{route('register')}}" 
+                        class="btn btn-outline-secondary text-light my-3 mx-1">
+                          @lang('splash.register')
+                        </a>
+                      </div>
+                    @endif
+                  </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="offset-md-1 col-sm-10 offset-md-2 col-md-8" 
+                style="min-height:336px">
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+          </main>
+          @include('components.footer')
+      </div>
+      @yield('script')
+	</body>
 </html>

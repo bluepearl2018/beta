@@ -10,7 +10,3 @@
 | contains the "back" middleware group. Now create something great!
 |
 */
-
-Route::prefix('/')->group(function() {
-    Route::resource('/pages/admin', 'PagesAdminController')->middleware('back');
-});

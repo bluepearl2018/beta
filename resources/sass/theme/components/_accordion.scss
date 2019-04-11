@@ -1,0 +1,147 @@
+//
+// Accordion
+// --------------------------------------------------
+// Style 1 (Default)
+.accordion {
+    .card {
+        border-top: 1px solid $border-color;
+        &:first-child {
+            border: 0;
+        }
+        &::after {
+            display: none;
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: $primary;
+            content: '';
+            z-index: 5;
+        }
+    }
+    .card-header,
+    .card-footer {
+        padding: 0;
+        border: 0;
+    }
+    .card,
+    [data-toggle='collapse'] {
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: $primary;
+            content: '';
+            z-index: 5;
+        }
+        &::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 28px;
+            width: 28px;
+            height: 28px;
+            margin-top: -14px;
+            transition: all .25s;
+            border-radius: 50%;
+            color: $primary;
+            font: {
+                size: $font-size-lg;
+                weight: normal;
+            }
+            line-height: 26px;
+            text-align: center;
+            box-shadow: 1px 8px 15px 0 rgba($primary, .35);
+            background-color: $white;
+            color: $gray-800;
+            content: '>';
+            box-shadow: 1px -8px 15px 0 rgba($gray-700, .15);
+        }
+    }
+    [data-toggle='collapse'] {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 25px 30px;
+        padding-right: 65px;
+        transition: color .3s, box-shadow .2s;
+        color: $primary;
+        font: {
+            size: $font-size-lg;
+            weight: bold;
+        }
+        text-decoration: none;
+        box-shadow: $box-shadow-inset;
+        >i {
+            display: inline-block;
+            margin: {
+                top: -2px;
+                right: 7px;
+            }
+            font-size: 1.1em;
+            vertical-align: middle;
+        }
+        &::before {
+            height: 0;
+            transition: height .25s;
+            background-color: $white;
+        }
+        &.collapsed::before {
+            height: 100%;
+        }
+        &.collapsed {
+            color: $headings-color;
+            box-shadow: 1px 8px 15px 0 rgba($primary, .35);
+            &::before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                background-color: $primary;
+                content: '';
+                z-index: 5;
+            }
+            &::after {
+                color: $gray-800;
+                content: '>';
+                box-shadow: 1px -8px 15px 0 rgba($gray-700, .15);
+            }
+        }
+    }
+    .card-body {
+        padding: {
+            top: 0;
+            right: 30px;
+            bottom: 30px;
+            left: 30px;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .accordion {
+        [data-toggle='collapse'] {
+            padding: 20px 18px;
+            padding-right: 50px;
+            font-size: $font-size-md;
+            &::after {
+                right: 16px;
+            }
+        }
+        .card-body {
+            padding: {
+                right: 20px;
+                left: 20px;
+            }
+        }
+    }
+}

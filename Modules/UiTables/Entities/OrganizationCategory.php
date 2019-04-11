@@ -45,7 +45,7 @@ class OrganizationCategory extends Model
     */
     public function organizations()
     {
-        return $this->hasMany('App\Models\Organization', 'id');
+        return $this->hasMany('\Modules\UiTables\Entities\Organization', 'id');
     }
     /*
     |--------------------------------------------------------------------------

@@ -1,19 +1,21 @@
 @extends('blog::layouts.master')
     @section('content')
     @isset($categoryData)
-        <h1>{{$categoryData->title}}</h1>
-        <p class="lead">{{$categoryData->lead}}</p>
-        @if(!is_null($categoryData->image))
-            <img class="img-fluid" src="{{--$categoryData->image--}}" alt="{{$categoryData->title}}" />
-        @endif
+        <div class="blog-card">
+            <h1 class="post-title">{{$categoryData->title}}</h1>
+            <p class="lead">{{$categoryData->lead}}</p>
+            @if(!is_null($categoryData->image))
+                <img class="img-fluid" src="{{--$categoryData->image--}}" alt="{{$categoryData->title}}" />
+            @endif
+        </div>
     @endisset
     @isset($blogCategories)
         @if ($blogCategories->count())
             @foreach ($blogCategories as $blogCategory)
-                <div class="card border mb-3">
+                <div class="blog-card border mb-3">
                     <div class="row no-gutters card-body">
                         <div class="col-md-12 mb-2 border-bottom">
-                            <a class="h4" href="/blog/{{ $blogCategory->parent->slug }}/{{ $blogCategory->slug }}" 
+                            <a class="post-title" href="/blog/{{ $blogCategory->parent->slug }}/{{ $blogCategory->slug }}" 
                                 class="nav-link text-muted p-0 font-weight-bold  {{ ($blogCategory->slug == Route::currentRouteName())?'active':'' }}">
                                 <span class="align-top" style="color:#0a8398">[</span>
                                 <span style="color:#2b1b1b!important;">{{ $blogCategory->title }}</span>

@@ -1,6 +1,5 @@
-<div class="clearfix"></div>
 <div id="connect-register-btns" class="clearfix login-bar" 
-style="background-color: rgb(158, 148, 120);">
+    style="background-color: rgb(158, 148, 120);">
     @guest
     @if (Route::has('login'))
         <a href="{{ route('login') }}" role="button" class="btn btn-sm text-light float-right m-2 ml-2 border rounded">

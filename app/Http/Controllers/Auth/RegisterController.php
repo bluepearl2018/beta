@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/account';
 
     /**
      * Create a new controller instance.
@@ -51,7 +51,14 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
+            'VAT' => ['string', 'max:20', 'nullable'],
+            'mother_language' => ['required', 'integer'],
+            'country_id' => ['required', 'integer'],
+            'general_terms' => ['required', 'boolean'],
+            'register_as' => ['required', 'integer'],
         ]);
     }
 
@@ -63,10 +70,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
+            'firstname' => $data['firstname'],
+            'surname' => $data['surname'],
+            'country_id' => $data['country_id'],
+            'mother_language' => $data['mother_language'],
+            'VAT' => $data['VAT'],
+            'general_terms' => $data['general_terms'],
+            'register_as' => $data['register_as'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        // TODO 2 : AFTER SALE
+        // il faut revoir les attribution des rĂ´les
     }
 }

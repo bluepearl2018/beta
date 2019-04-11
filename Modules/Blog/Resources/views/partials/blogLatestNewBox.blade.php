@@ -1,6 +1,6 @@
 @isset($blogLatestArticle)
-<div class="card">
-    <h6 class="card-header">
+<div class="card card-blog blog-latest-article">
+    <h6 class="card-header post-title">
         @lang('blog.blogLatestNews')
     </h6>
     <div class="card-body">

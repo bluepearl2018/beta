@@ -11,5 +11,6 @@ const mix = require('laravel-mix');
  |
  */
 
+// 1. A single src and output path.
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/theme/_eutranet.scss', 'public/css');

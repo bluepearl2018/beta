@@ -1,5 +1,5 @@
-<div class="row mb-3">
-    <div class="col-md-6 order-md-12 order-sm-1 mb-3">
+<div class="card-deck mb-3 no-gutters">
+    <div class="card order-md-12 order-sm-1 mb-3">
         <div class="card-body border rounded">
             <h2 class="card-title">@lang('marketing.forProfessionalTranslators')</h2>
             <p>@lang('marketing.directRecruitmentFromTheIndustry')<br>
@@ -19,7 +19,7 @@
             </a>
         </div>
     </div>
-    <div class="col-md-6  order-md-1 order-sm-12 mb-3">
+    <div class="card order-md-1 order-sm-12 mb-3">
         <div class="card-body border rounded">
             <h2 class="card-title">@lang('marketing.forBuyers')</h2>
             <p>

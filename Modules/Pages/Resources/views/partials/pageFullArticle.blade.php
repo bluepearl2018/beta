@@ -1,14 +1,14 @@
-@isset($articleData)
+@isset($pageData)
     <h1>
-        {{ $articleData['title'] }}
+        {{ $pageData['title'] }}
     </h1>
     <p class="lead">
-        {{ $articleData['lead'] }}
+        {{ $pageData['lead'] }}
     </p>
     <p> 
-        @if(! is_null($articleData['image']))
+        @if(! is_null($pageData['image']))
             <img class="img-thumbnail rounded float-left mb-2" src="{{-- asset($articleData['image']) --}}" alt="{{ $articleData['title'] }}" />
         @endif    
-        {{ $articleData['content'] }}
+        {{ $pageData['content'] }}
     </p>
 @endisset

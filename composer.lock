@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91bb08155fe841879e07ac8a6c1fc8f8",
+    "content-hash": "8c699764eff8cfd919827d66ff464a25",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -7535,6 +7535,46 @@
                 "laravel"
             ],
             "time": "2019-04-02T20:31:59+00:00"
+        },
+        {
+            "name": "tightenco/parental",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/parental.git",
+                "reference": "43f02e764d95ac62df2b2a3a69a37c9e78115fb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/parental/zipball/43f02e764d95ac62df2b2a3a69a37c9e78115fb2",
+                "reference": "43f02e764d95ac62df2b2a3a69a37c9e78115fb2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tightenco\\Parental\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A simple eloquent trait that allows relationships to be accessed through child models.",
+            "time": "2019-02-28T04:26:54+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

@@ -1,4 +1,4 @@
-<div id="languageBar" class="p-2 collapse border-bottom" aria-labelledby="selectedLanguageFlag">
+<div id="languageBar" class="container-fluid d-flex-none justify-content-right p-2 collapse" aria-labelledby="selectedLanguageFlag">
     <ul id="flags" class="list-inline w-100 text-right mb-0 d-xs-inline-block">
         <li class="list-inline-item">
             <span class="d-none d-md-inline-block">

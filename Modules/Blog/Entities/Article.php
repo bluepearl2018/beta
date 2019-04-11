@@ -4,11 +4,12 @@ namespace Modules\Blog\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Backpack\CRUD\CrudTrait;
 
 class Article extends Model
 {
     use HasSlug;
-    
+    use CrudTrait;
 
     /*
     |--------------------------------------------------------------------------

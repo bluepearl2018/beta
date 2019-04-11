@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $faker = Faker\Factory::create();
+        $now = \Carbon\Carbon::now();
+
+        DB::table('users')->insert([[
+            'id' => 1,
+            'name' => $faker->name,
+            'email' => $faker->safeEmail,
+            'password' => bcrypt('secret'),
+            'remember_token' => str_random(10),
+            'created_at' => $now,
+            'updated_at' => $now,
+        ]]);
     }
 }

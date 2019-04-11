@@ -1,24 +1,39 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @include('components.head')
+    <body class="bg-primary" {{--style="background: url('/uploads/images/science-3334826_1920.jpg') no-repeat; background-size:cover; background-position:center top;"--}}>
+        <div id="app" class="container-fluid m-0 p-0 bg-primary">
+            <header class="d-flex row container-fluid m-0 p-0">
+                @include('components.header')
+            </header>
+            <main class="d-flex container-fluid no-gutters m-0 p-0 bg-primary">
+                <div class="d-flex container-fluid flex-md-row flex-column no-gutters m-0 p-0">
+                    <div class="col-xs-12 col-md-1 order-1 bg-primary">
+                        <div class="nav flex-xs-row flex-md-column nav-pills m-0 h-100" id="v-pills-tab" role="tablist">
+                            @include('partials.nav-sidenav')
                         </div>
-                    @endif
-                    <passport-clients></passport-clients>
-                    <passport-authorized-clients></passport-authorized-clients>
-                    <passport-personal-access-tokens-clients></passport-personal-access-tokens-clients>
+                    </div>
+                    <div class="col-xs-12 col-md-11 order-12 bg-light">
+                        <div class="row-fluid container-fluid flex-md-row flex-column m-0 p-0">
+                            @yield('image')
+                            <div style="background-color:lightgray; padding-bottom:0">
+                                @yield('breadcrumbs')
+                            </div>
+                            <div class="container-fluid row-fluid m-0 p-0 row no-gutters">
+                                <div class="col-xs-12 col-md-3 order-1 order-md-1 px-md-3 bg-secondary">
+                                    @yield('aside')
+                                </div>
+                                <div class="col-xs-12 col-md-9 order-12 order-md-12 bg-light">
+                                    @include('flash::message')
+                                    @yield('content')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </main>
         </div>
-    </div>
-</div>
-@endsection
+        @include('components.footer')
+        @yield('script')
+    </body>
+</html>

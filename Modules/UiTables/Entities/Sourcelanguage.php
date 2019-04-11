@@ -18,7 +18,7 @@ class Sourcelanguage extends Model
     protected $table = 'sourcelanguages';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     protected $fillable = ['code', 'name', 'region'];
     // protected $hidden = [];
     // protected $dates = [];
@@ -34,13 +34,13 @@ class Sourcelanguage extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    
     /*
     |--------------------------------------------------------------------------
     | SCOPES
     |--------------------------------------------------------------------------
     */
-
+    
     /*
     |--------------------------------------------------------------------------
     | ACCESORS

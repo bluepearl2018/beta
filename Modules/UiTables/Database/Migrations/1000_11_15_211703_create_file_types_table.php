@@ -20,6 +20,19 @@ class CreateFileTypesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        DB::table('file_types')->insert(
+            array(
+                array('name' => 'Certificat'),
+                array('name' => 'Glossaire'),
+                array('name' => 'Mémoire de traduction'),
+                array('name' => 'Document de référence'),
+                array('name' => 'Avatar'),
+                array('name' => 'Photo'),
+                array('name' => 'Logo'),
+                array('name' => 'Document personnel')
+            )
+        );
     }
 
     /**

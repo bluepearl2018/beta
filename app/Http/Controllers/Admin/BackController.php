@@ -9,7 +9,7 @@ class BackController extends Controller
 {
     public function index()
     {
-        $this->middleware('back');
+        // $this->middleware('web');
         return view('layouts.back');
     }
 }

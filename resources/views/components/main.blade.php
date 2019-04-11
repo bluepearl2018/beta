@@ -1,19 +1,18 @@
-<div class="row no-gutters p-0 m-0">
-        <div class="col-md-1">
-            @include('partials.nav-sidenav')
-        </div>
-        <div class="col-md-2" style="background-color: rgb(158, 148, 120);">
-            @yield('menu')
-        </div>
-        <div class="col-md-6">
-            @yield('breadcrumbs')
-            @yield('image')
-            <div class="container py-3 border">
+<div class="container-fluid m-0 p-0">
+    <div class="d-flex row-fluid no-gutters">
+        <div class="col-md-12 order-md-3 bg-light border-left">
+            <div class="row-fluid m-0">
+                @yield('image')
+            </div>
+            <div class="row-fluid no-gutters m-0 p-0 bg-primary">
+                <div class="bg-secondary clear-fix col-md-12">
+                    @yield('breadcrumbs')
+                </div>
                 @include('flash::message')
-                @yield('content')
+                <div class="container-fluid m-0 p-0 row-fluid py-3">
+                    @yield('content')
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
-            @yield('aside')
-        </div>
+    </div>
 </div>

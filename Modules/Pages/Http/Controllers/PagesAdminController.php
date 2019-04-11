@@ -2,78 +2,62 @@
 
 namespace Modules\Pages\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
+use \Backpack\CRUD\app\Http\Controllers\CrudController;
 
-class PagesAdminController extends Controller
+// VALIDATION: change the requests to match your own file names if you need form validation
+use Modules\Pages\Http\Requests\TagRequest as StoreRequest;
+use Modules\Pages\Http\Requests\TagRequest as UpdateRequest;
+use \Backpack\CRUD\app\Http\CrudPanel;
+
+/**
+ * Class PagesAdminController
+ * @package \Modules\Pages\Http\Controllers
+ * @property-read CrudPanel $crud
+ */
+class PagesAdminController extends CrudController
 {
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
-    public function index()
+    public function setup()
     {
-        return view('pages::index');
+        /*
+        |--------------------------------------------------------------------------
+        | CrudPanel Basic Information
+        |--------------------------------------------------------------------------
+        */
+        $this->crud->setModel('Modules\Pages\Entities\Page');
+        $this->crud->setRoute('admin/pages');
+        $this->crud->setEntityNameStrings('page', 'pages');
+
+        /*
+        |--------------------------------------------------------------------------
+        | CrudPanel Configuration
+        |--------------------------------------------------------------------------
+        */
+        
+        $this->crud->setFromDb(); //
+        $this->crud->addField(['name' => 'content', 'type' => 'wysiwyg', 'label' => 'Content']);
+        $this->crud->addField(['name' => 'image', 'type' => 'image', 'label' => 'Content']);
+        $this->crud->allowAccess('reorder');
+        $this->crud->enableReorder('title', '2');
+        // add asterisk for fields that are required in TagRequest
+        $this->crud->setRequiredFields(StoreRequest::class, 'create');
+        $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create()
+    public function store(StoreRequest $request)
     {
-        return view('pages::create');
+        // your additional operations before save here
+        $redirect_location = parent::storeCrud($request);
+        // your additional operations after save here
+        // use $this->data['entry'] or $this->crud->entry
+        return $redirect_location;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
+    public function update(UpdateRequest $request)
     {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('pages::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        return view('pages::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        // your additional operations before save here
+        $redirect_location = parent::updateCrud($request);
+        // your additional operations after save here
+        // use $this->data['entry'] or $this->crud->entry
+        return $redirect_location;
     }
 }

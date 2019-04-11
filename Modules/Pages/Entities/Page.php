@@ -1,14 +1,17 @@
 <?php
 
 namespace Modules\Pages\Entities;
-use Illuminate\Database\Eloquent\Model;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use \Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
+use \Backpack\CRUD\CrudTrait;
+// use \Spatie\Sluggable\HasSlug;
+// use \Spatie\Sluggable\SlugOptions;
 
 class Page extends Model
 {
-    use HasSlug;
-    
+    // use HasSlug;
+    use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,6 +26,7 @@ class Page extends Model
     // protected $hidden = [];
     protected $dates = ['created_at', 'updated_at'];
     protected $fillable = ['title', 'slug', 'lead', 'content', 'image', 'meta', 'parent_id', 'status'];
+    protected $translatable = ['title', 'lead', 'content'];
     
     /*
     |--------------------------------------------------------------------------

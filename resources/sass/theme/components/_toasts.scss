@@ -1,0 +1,102 @@
+.toast {
+    max-width: $toast-max-width;
+    overflow: hidden; // cheap rounded corners on nested items
+    @include font-size($toast-font-size);
+    color: $toast-color;
+    background-color: $toast-background-color;
+    background-clip: padding-box;
+    border: $toast-border-width solid $toast-border-color;
+    box-shadow: $toast-box-shadow;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    @include border-radius($toast-border-radius);
+    &:not(:last-child) {
+        margin-bottom: $toast-padding-x;
+    }
+    &.showing {
+        opacity: 1;
+    }
+    &.show {
+        display: block;
+        opacity: 1;
+    }
+    &.hide {
+        display: none;
+    }
+}
+
+.toast-header {
+    display: flex;
+    align-items: center;
+    padding: $toast-padding-y $toast-padding-x;
+    color: $toast-header-color;
+    background-color: $toast-header-background-color;
+    background-clip: padding-box;
+    border-bottom: $toast-border-width solid $toast-header-border-color;
+}
+
+.toast-body {
+    padding: $toast-padding-x; // apply to both vertical and horizontal
+}
+
+// Toast Notification
+// --------------------------------------------------
+.iziToast {
+    border: $toast-border-width solid $toast-border-color;
+    border-radius: 0;
+    background: $toast-background-color;
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: $toast-box-shadow;
+        content: '';
+        z-index: -1;
+    }
+    >.iziToast-body {
+        margin-left: 1rem;
+        >.iziToast-icon {
+            margin-top: -.625rem;
+        }
+    }
+    >.iziToast-close {
+        width: 40px;
+        background: none;
+        opacity: 1;
+        &::before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            font: {
+                family: feather;
+                size: $font-size-md;
+            }
+            text-align: center;
+            content: '\ea04';
+        }
+    }
+    &.iziToast-primary {
+        @include toast-variant($primary);
+    }
+    &.iziToast-accent {
+        @include toast-variant($accent);
+    }
+    &.iziToast-info {
+        @include toast-variant($info);
+    }
+    &.iziToast-success {
+        @include toast-variant($success);
+    }
+    &.iziToast-warning {
+        @include toast-variant($warning);
+    }
+    &.iziToast-danger {
+        @include toast-variant($danger);
+    }
+}

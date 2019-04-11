@@ -1,11 +1,14 @@
 @extends('pages::layouts.master')
+    @section('image')
+        @if(!is_null($categoryData->image))
+            <img class="img-fluid" src="{{ $categoryData->image }}" alt="{{$categoryData->title}}" />
+        @endif
+    @endsection
     @section('content')
     @isset($categoryData)
         <h1>{{$categoryData->title}}</h1>
         <p class="lead">{{$categoryData->lead}}</p>
-        @if(!is_null($categoryData->image))
-            <img class="img-fluid" src="{{--$categoryData->image--}}" alt="{{$categoryData->title}}" />
-        @endif
+        <p>{!!$categoryData->content!!}</p>
     @endisset
     @isset($pageCategories)
         @if ($pageCategories->count())
@@ -22,16 +25,21 @@
                         </div>
                         <div class="col-md-8 mr-auto">
                             <p>{{ $pageCategory->lead }}</p>
+                            <a class="btn btn-outline-secondary" href="/pages/{{$pageCategory->slug}}">
+                                En savoir plus
+                            </a>
                         </div>
-                        @if($pageCategory->image)
+                        @if(!is_null($pageCategory->image) && $pageCategory->image > 0)  
                             <div class="col-md-4">
                                 <img class="img-fluid" src="{{ $pageCategory->image }}" alt="{{ $pageCategory->title }}" />
                             </div>
                         @endif
                     </div>
+                    @if(!is_null($pageCategory->created_at))
                     <div class="card-footer py-1">
                         <small>{{ $pageCategory->created_at }}</small>
                     </div>
+                    @endif
                 </div>
             @endforeach
         @endif

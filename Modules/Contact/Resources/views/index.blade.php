@@ -1,5 +1,4 @@
 @extends('contact::layouts.master')
-
 @section('content')
     <h1>@lang('contact.contactTitle')</h1>
     <p class="lead">

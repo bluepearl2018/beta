@@ -12,5 +12,5 @@
 */
 
 Route::prefix('/contact')->group(function() {
-    Route::resource('/', 'ContactAdminController')->middleware('back');
+    Route::resource('/', 'ContactAdminController');
 });
