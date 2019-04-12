@@ -28,6 +28,7 @@ class UserLanguagePairController extends BaseController
     {
         $this->userLanguagePairRepository = $userLanguagePairRepo;
         $this->userRepository = $userRepo;
+        $this->middleware(['role:translator', 'permission:access-language-pairs']);
     }
 
     /**

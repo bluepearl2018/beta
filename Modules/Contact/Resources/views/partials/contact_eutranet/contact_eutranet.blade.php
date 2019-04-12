@@ -5,10 +5,10 @@
 <div class="mt-2">
     <h1 class="border-bottom">
         <i class="fa fa-envelope"></i>
-        @lang('contact::partials.contactEutranet')
+        @lang('contacts.contactEutranet')
     </h1>
     <p class="lead">
-        @lang('contact::partials.contactEutranetLead')
+        @lang('contacts.contactEutranetLead')
     </p>
     <form id="sendMessage" method="POST" action="{{route('contact-eutranet-post')}}">
             @csrf

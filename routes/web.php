@@ -10,14 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/uitables/tgtLangSelector/ajax/{sourceLang_id}',array('as'=>'tgtLangSelector.ajax','uses'=>'\Modules\UiTables\Http\Controllers\LanguagePairController@ajaxLangPairSelector'));

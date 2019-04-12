@@ -1,0 +1,14 @@
+{
+    "name": "Contributions",
+    "alias": "contributions",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Contributions\\Providers\\ContributionsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -86,24 +86,14 @@ class AccountController extends BaseController
         // in order to start using advanced functions (recruitement + toolbox)
         
         if(count(Auth::User()->getRoleNames()) < 1){
-            if(Auth::User()->register_as == '7'){
-                Auth::User()->assignRole('vendor', 'premium');
-            }
-            elseif(Auth::User()->register_as == '9'){
-                Auth::User()->assignRole('dtper', 'premium');
-            }
-            elseif(Auth::User()->register_as == '16'){
-                Auth::User()->assignRole('developer', 'premium');
-            }
-            elseif(Auth::User()->register_as == '22'){
-                Auth::User()->assignRole('proorg', 'premium');
-            }
-            elseif(Auth::User()->register_as == '23'){
-                Auth::User()->assignRole('academic', 'premium');
-            }
+            
+            $registerAs = Auth::User()->register_as;
+            $role = \App\Models\Role::findById($registerAs);
+            Auth::User()->assignRole($role->name);
+
         }
 
-        Flash::success('Eutranet a ajouté ces données à votre compte d\'utilisateur.');
+        Flash::success(trans('account.accountCreatedAndUpdated'));
         return redirect('account/')->with('userProfile', $userProfile);
     }
 
@@ -373,7 +363,7 @@ class AccountController extends BaseController
                         $user2Update->save();
                         // $user2Update->syncRoles(['unverified']);
                         // TODO : send delete email confirmation and so on
-                        Flash::success('Votre compte est désactivé.');
+                        Flash::success(trans('account.accountDesactivated'));
                         return redirect()->back();
 
                     }

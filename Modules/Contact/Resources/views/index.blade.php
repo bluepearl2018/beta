@@ -2,7 +2,7 @@
 @section('content')
     <h1>@lang('contact.contactTitle')</h1>
     <p class="lead">
-            @lang('contact.contactLead')
+           @lang('contacts.contactLead')
     </p>
     <div class="card-columns">
         @forelse($contactPages as $contactPage)
@@ -19,7 +19,7 @@
                                 <i class="fa fa-{{$contactPage->icon}} fa-3x d-block card-body text-muted"></i>
                             </a>
                         <div class="card-footer">
-                            @lang('contact.contactUs')
+                           @lang('contacts.contactUs')
                         </div>
                     </div>
                 @endguest

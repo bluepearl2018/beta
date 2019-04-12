@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c699764eff8cfd919827d66ff464a25",
+    "content-hash": "627b9ad73bd715cf1b5f5ca48603f8af",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -165,16 +165,16 @@
         },
         {
             "name": "backpack/crud",
-            "version": "3.6.10",
+            "version": "3.6.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "287e73173554a2c23386490a2692ccbb0c80bcca"
+                "reference": "0c62e7cee74e9f1fba05cc85e69035b183f566a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/287e73173554a2c23386490a2692ccbb0c80bcca",
-                "reference": "287e73173554a2c23386490a2692ccbb0c80bcca",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/0c62e7cee74e9f1fba05cc85e69035b183f566a0",
+                "reference": "0c62e7cee74e9f1fba05cc85e69035b183f566a0",
                 "shasum": ""
             },
             "require": {
@@ -236,7 +236,82 @@
                 "read",
                 "update"
             ],
-            "time": "2019-04-01T08:29:53+00:00"
+            "time": "2019-04-10T06:48:23+00:00"
+        },
+        {
+            "name": "backpack/permissionmanager",
+            "version": "4.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Backpack/PermissionManager.git",
+                "reference": "eee1d5565d75f3d99f67a46d5e1bf6d05ef7eaa7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Backpack/PermissionManager/zipball/eee1d5565d75f3d99f67a46d5e1bf6d05ef7eaa7",
+                "reference": "eee1d5565d75f3d99f67a46d5e1bf6d05ef7eaa7",
+                "shasum": ""
+            },
+            "require": {
+                "backpack/crud": "^3.4.0",
+                "spatie/laravel-permission": "^2.34.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Backpack\\PermissionManager\\PermissionManagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Backpack\\PermissionManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Constantin",
+                    "email": "marius@updivision.com",
+                    "homepage": "http://www.updivision.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Cristian Tabacitu",
+                    "email": "hello@tabacitu.ro",
+                    "homepage": "http://www.tabacitu.ro",
+                    "role": "Chief Architect"
+                }
+            ],
+            "description": "Users and permissions management interface for Laravel 5 using Backpack CRUD.",
+            "homepage": "https://github.com/laravel-backpack/permissionmanager",
+            "keywords": [
+                "backpack",
+                "backpack permission",
+                "backpack roles",
+                "backpack user management",
+                "dick",
+                "dick permission",
+                "laravel backpack",
+                "manage permission",
+                "manage roles",
+                "manage users",
+                "tabacitu",
+                "updivision",
+                "users roles admin"
+            ],
+            "time": "2019-03-12T09:30:25+00:00"
         },
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -1660,16 +1735,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.92",
+            "version": "v0.93",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "8d8f7faebe21e4cbf94921c97af6e02daca7cefb"
+                "reference": "c40ae41ebde3a0f5435ddd855ecbdf04c1783de0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8d8f7faebe21e4cbf94921c97af6e02daca7cefb",
-                "reference": "8d8f7faebe21e4cbf94921c97af6e02daca7cefb",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/c40ae41ebde3a0f5435ddd855ecbdf04c1783de0",
+                "reference": "c40ae41ebde3a0f5435ddd855ecbdf04c1783de0",
                 "shasum": ""
             },
             "require": {
@@ -1693,7 +1768,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-03-31T00:23:05+00:00"
+            "time": "2019-04-06T00:22:58+00:00"
         },
         {
             "name": "google/auth",
@@ -2269,16 +2344,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.9",
+            "version": "v5.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2455d21938e9072e5a8ecef64ae162a1825d336b"
+                "reference": "a2cf7a7983329d63edc6fde43142b232bb61aa0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2455d21938e9072e5a8ecef64ae162a1825d336b",
-                "reference": "2455d21938e9072e5a8ecef64ae162a1825d336b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a2cf7a7983329d63edc6fde43142b232bb61aa0a",
+                "reference": "a2cf7a7983329d63edc6fde43142b232bb61aa0a",
                 "shasum": ""
             },
             "require": {
@@ -2412,7 +2487,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-04-02T14:11:17+00:00"
+            "time": "2019-04-10T13:05:18+00:00"
         },
         {
             "name": "laravel/passport",
@@ -2920,22 +2995,22 @@
         },
         {
             "name": "league/glide",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/glide.git",
-                "reference": "72430fbdb446c754910f0bab97e1ef14baab1e80"
+                "reference": "a5477e9e822ed57b39861a17092b92553634932d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/glide/zipball/72430fbdb446c754910f0bab97e1ef14baab1e80",
-                "reference": "72430fbdb446c754910f0bab97e1ef14baab1e80",
+                "url": "https://api.github.com/repos/thephpleague/glide/zipball/a5477e9e822ed57b39861a17092b92553634932d",
+                "reference": "a5477e9e822ed57b39861a17092b92553634932d",
                 "shasum": ""
             },
             "require": {
                 "intervention/image": "^2.4",
                 "league/flysystem": "^1.0",
-                "php": "^5.4 | ^7.0",
+                "php": "^5.5 | ^7.0",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
@@ -2977,7 +3052,7 @@
                 "manipulation",
                 "processing"
             ],
-            "time": "2018-12-22T17:56:55+00:00"
+            "time": "2019-04-03T23:46:42+00:00"
         },
         {
             "name": "league/oauth2-server",
@@ -3058,16 +3133,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.10",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "6a66d5af480bd6f46f689b6ebe2e84912694f311"
+                "reference": "8576af60a456bcead31a2d2d9cf03dea0598860e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/6a66d5af480bd6f46f689b6ebe2e84912694f311",
-                "reference": "6a66d5af480bd6f46f689b6ebe2e84912694f311",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/8576af60a456bcead31a2d2d9cf03dea0598860e",
+                "reference": "8576af60a456bcead31a2d2d9cf03dea0598860e",
                 "shasum": ""
             },
             "require": {
@@ -3122,7 +3197,7 @@
                 "php",
                 "phpspreadsheet"
             ],
-            "time": "2019-03-18T15:57:28+00:00"
+            "time": "2019-03-19T10:54:38+00:00"
         },
         {
             "name": "madewithlove/illuminate-psr-cache-bridge",
@@ -3478,16 +3553,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.16.2",
+            "version": "2.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "720a9c36927396efeeb48a972e9d129d44b6dc28"
+                "reference": "373d9f0d58651af366435148c39beb702c2b7ef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/720a9c36927396efeeb48a972e9d129d44b6dc28",
-                "reference": "720a9c36927396efeeb48a972e9d129d44b6dc28",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/373d9f0d58651af366435148c39beb702c2b7ef4",
+                "reference": "373d9f0d58651af366435148c39beb702c2b7ef4",
                 "shasum": ""
             },
             "require": {
@@ -3534,7 +3609,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-03-29T12:23:12+00:00"
+            "time": "2019-04-06T17:09:23+00:00"
         },
         {
             "name": "nicmart/tree",
@@ -4821,16 +4896,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "de2c095fe0e37d7d37b537b99a85fd26e9186271"
+                "reference": "5797619a831f17139e3c8437fdc897c2d6efef8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/de2c095fe0e37d7d37b537b99a85fd26e9186271",
-                "reference": "de2c095fe0e37d7d37b537b99a85fd26e9186271",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/5797619a831f17139e3c8437fdc897c2d6efef8f",
+                "reference": "5797619a831f17139e3c8437fdc897c2d6efef8f",
                 "shasum": ""
             },
             "require": {
@@ -4876,7 +4951,7 @@
                 "spatie",
                 "website"
             ],
-            "time": "2019-03-11T10:44:59+00:00"
+            "time": "2019-04-05T12:40:56+00:00"
         },
         {
             "name": "spatie/db-dumper",
@@ -5083,29 +5158,29 @@
         },
         {
             "name": "spatie/laravel-activitylog",
-            "version": "3.2.2",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "8db5d2f314a26ee9a1617bdecd98947fdf29fcfa"
+                "reference": "3d7cb418148a80d5c1afe07657c1771965851d1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/8db5d2f314a26ee9a1617bdecd98947fdf29fcfa",
-                "reference": "8db5d2f314a26ee9a1617bdecd98947fdf29fcfa",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/3d7cb418148a80d5c1afe07657c1771965851d1c",
+                "reference": "3d7cb418148a80d5c1afe07657c1771965851d1c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
-                "illuminate/database": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
-                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
-                "php": "^7.1",
+                "illuminate/config": "~5.8.0",
+                "illuminate/database": "~5.8.0",
+                "illuminate/support": "~5.8.0",
+                "php": "^7.2",
                 "spatie/string": "^2.1"
             },
             "require-dev": {
                 "ext-json": "*",
-                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0|~3.8.0",
-                "phpunit/phpunit": "^7.4 | ^8.0",
+                "orchestra/testbench": "~3.8.0",
+                "phpunit/phpunit": "^7.5|^8.0",
                 "scrutinizer/ocular": "^1.5"
             },
             "type": "library",
@@ -5151,7 +5226,7 @@
                 "spatie",
                 "user"
             ],
-            "time": "2019-02-27T12:41:17+00:00"
+            "time": "2019-04-09T14:53:05+00:00"
         },
         {
             "name": "spatie/laravel-analytics",
@@ -5222,16 +5297,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.1.1",
+            "version": "6.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "aea866d7a66b503365a3bdf07fbeea3babb87707"
+                "reference": "3b223bf8355d97c4bb9c0afbd7b4c4f7952fc529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/aea866d7a66b503365a3bdf07fbeea3babb87707",
-                "reference": "aea866d7a66b503365a3bdf07fbeea3babb87707",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/3b223bf8355d97c4bb9c0afbd7b4c4f7952fc529",
+                "reference": "3b223bf8355d97c4bb9c0afbd7b4c4f7952fc529",
                 "shasum": ""
             },
             "require": {
@@ -5292,7 +5367,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2019-02-27T15:34:30+00:00"
+            "time": "2019-04-05T13:08:54+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -5418,16 +5493,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "2.36.1",
+            "version": "2.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "0d9c442dc4361ce829986697bc436578d816a9ca"
+                "reference": "81dbe9d372d70c255b66a2727a235076509f8d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/0d9c442dc4361ce829986697bc436578d816a9ca",
-                "reference": "0d9c442dc4361ce829986697bc436578d816a9ca",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/81dbe9d372d70c255b66a2727a235076509f8d45",
+                "reference": "81dbe9d372d70c255b66a2727a235076509f8d45",
                 "shasum": ""
             },
             "require": {
@@ -5479,7 +5554,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2019-03-05T14:58:35+00:00"
+            "time": "2019-04-09T12:45:17+00:00"
         },
         {
             "name": "spatie/laravel-sitemap",
@@ -6118,16 +6193,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.31.3",
+            "version": "v6.31.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "d14f02d603c47824d7acaf88491195e3f199408d"
+                "reference": "917973d36f77d8658ecc54b70a8d6b32232c51e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d14f02d603c47824d7acaf88491195e3f199408d",
-                "reference": "d14f02d603c47824d7acaf88491195e3f199408d",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/917973d36f77d8658ecc54b70a8d6b32232c51e4",
+                "reference": "917973d36f77d8658ecc54b70a8d6b32232c51e4",
                 "shasum": ""
             },
             "require": {
@@ -6170,7 +6245,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-04-02T18:31:38+00:00"
+            "time": "2019-04-05T17:10:58+00:00"
         },
         {
             "name": "studio-42/elfinder",
@@ -7488,7 +7563,7 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.8.9",
+            "version": "v5.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
@@ -8555,16 +8630,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.8.1",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8"
+                "reference": "e6828efaba2c9b79f4499dae1d66ef8bfa7b2b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
-                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/e6828efaba2c9b79f4499dae1d66ef8bfa7b2b72",
+                "reference": "e6828efaba2c9b79f4499dae1d66ef8bfa7b2b72",
                 "shasum": ""
             },
             "require": {
@@ -8599,7 +8674,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2018-06-11T23:09:50+00:00"
+            "time": "2019-04-07T13:18:21+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -9886,16 +9961,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b"
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/cb2f008f3f05af2893a87208fe6a6c4985483f8b",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/1c42705be2b6c1de5904f8afacef5895cab44bf8",
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8",
                 "shasum": ""
             },
             "require": {
@@ -9922,7 +9997,7 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2017-04-07T12:08:54+00:00"
+            "time": "2019-04-04T09:56:43+00:00"
         },
         {
             "name": "webmozart/assert",

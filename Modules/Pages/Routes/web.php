@@ -12,11 +12,15 @@
 */
 
 Route::prefix('pages')->group(function() {
+
     Route::resource('/', 'PagesController');
+    
     Route::get('/{category}/{slug?}', 'PagesController@showPage', function($slug = NULL){
         return $slug;
     });
+    
     Route::get('/{category}', 'PagesController@showPageCategory', function($category){
         return $category;
     });
+    
 });

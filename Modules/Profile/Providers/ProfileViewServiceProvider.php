@@ -18,6 +18,7 @@ class ProfileViewServiceProvider extends ServiceProvider
         View::composer(
             [
             'profile::index', 
+            'home',
             'profile::userProfile.userProfile', 
             'profile::userProfile.userProfileNavLinks'], 
             \Modules\Profile\Http\ViewComposers\PrivateProfileComposer::class

@@ -12,6 +12,7 @@
 */
 
 Route::prefix('blog')->group(function() {
+    
     Route::resource('/', 'BlogController');
 
     Route::get('/{category}/{slug?}', 'BlogController@showArticle', function($slug = NULL){

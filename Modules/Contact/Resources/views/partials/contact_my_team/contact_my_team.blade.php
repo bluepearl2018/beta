@@ -8,9 +8,9 @@
     </h1>
     <p class="lead">@lang('interaction.mailBulkLead')</p>
     <form id="sendMailingForm" action="{{route('post-team-mailing')}}" method="POST">
-        <h2>Sélectionnez les destinataires de votre message</h2>
-        <a class="btn btn-outline-secondary mr-2 mb-2" id="check-all" href="javascript:void(0);">Sélectionner tout</a>
-        <a class="btn btn-outline-secondary mr-2 mb-2" id="uncheck-all" href="javascript:void(0);">Déselectionner tout</a> 
+        <h2>@lang('contacts.selectRecipients')</h2>
+        <a class="btn btn-outline-secondary mr-2 mb-2" id="check-all" href="javascript:void(0);">@lang('contacts.selectAll')</a>
+        <a class="btn btn-outline-secondary mr-2 mb-2" id="uncheck-all" href="javascript:void(0);">@lang('contacts.deselectAll')</a> 
         @csrf
         @php($i = 1)
         @forelse($myTeam as $teamMember)
@@ -28,7 +28,7 @@
             </div>
         @endforelse
         @if(!empty($myTeam))
-        <h2>Composez votre message</h2>
+        <h2>@lang('contacts.composeYourMessage')</h2>
     
         @include('contact::partials.contact_fields.firstname')
         @include('contact::partials.contact_fields.surname')

@@ -19,7 +19,7 @@
     </p>
     <form id="contactPoolMgrForm" method="POST" action="/zones/contacts/contact-pool-manager/process-email">
             @csrf
-            <h2>Composez votre message</h2>
+            <h2>@lang('contacts.composeYourMessage')</h2>
             @include('contacts.contact_fields.firstname')
             @include('contacts.contact_fields.surname')
             @include('contacts.contact_fields.phone')

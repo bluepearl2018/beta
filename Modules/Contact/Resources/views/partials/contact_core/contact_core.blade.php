@@ -24,7 +24,8 @@
             </div>
         @endforelse
         @if(!empty($coreTeam))
-        <h2>Composez votre message</h2>
+        
+        <h2>@lang('contacts.composeYourMessage')</h2>
     
         @include('contact::partials.contact_fields.firstname')
         @include('contact::partials.contact_fields.surname')

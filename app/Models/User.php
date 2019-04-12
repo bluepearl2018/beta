@@ -7,17 +7,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 // Very important !!
-// use Backpack\CRUD\CrudTrait; // <------------------------------- this one
-use Spatie\Permission\Traits\HasRoles;// <---------------------- and this one
+use Backpack\CRUD\CrudTrait;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends OriginalUser
+class User extends OriginalUser implements MustVerifyEmail
+
 {
     use Notifiable;
-    // protected $guard_name = 'web'; // or whatever guard you want to use
-    
-    // // use CrudTrait; // <----- this
-    use HasRoles; // <------ and this
+    use CrudTrait;
+    use HasRoles;
 
+    protected $guard_name = 'web'; // or whatever guard you want to use
     
     /*
     |--------------------------------------------------------------------------

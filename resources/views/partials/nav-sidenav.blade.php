@@ -6,7 +6,8 @@
     @endif
 @endguest
 @auth
-    <a href="{{ route('logout') }}" class="d-block text-center p-2 {{ Request::is('logout*')? 'text-success' : 'text-light'}}" title="@lang('interface.logout')" onclick="document.getElementById('logoutForm').submit()">
+    <a class="d-block text-center p-2 {{ Request::is('logout*')? 'text-success' : 'text-light'}}" title="@lang('interface.logout')" 
+    onclick="document.getElementById('logoutForm').submit()">
         <span class="fa fa-2x fa-sign-out-alt align-middle"></span>
     </a>
 @endauth
@@ -15,12 +16,20 @@
     <span class="fa fa-2x fa-home align-middle"></span>
 </a>
 
+<a href="/home" class="d-block text-center p-2 {{ Request::is('home*')? 'text-success' : 'text-light'}}" title="@lang('interface.viewAlerts')">
+    <span class="fa fa-2x fa-tachometer-alt align-middle"></span>
+</a>
+
 <a href="/account" class="d-block text-center p-2 {{ Request::is('account*')? 'text-success' : 'text-light'}}" title="@lang('interface.viewAccount')">
     <span class="fa fa-2x fa-key align-middle"></span>
 </a>
 
 <a href="/profile" class="d-block text-center p-2 {{ Request::is('profile*')? 'text-success' : 'text-light'}}" title="@lang('interface.viewProfile')">
     <span class="fa fa-2x fa-user-circle align-middle"></span>
+</a>
+
+<a href="/contributions" class="d-block text-center p-2 {{ Request::is('contributions*')? 'text-success' : 'text-light'}}" title="@lang('interface.viewProfile')">
+    <span class="fa fa-2x fa-atom align-middle"></span>
 </a>
 
 <a href="/alerts" class="d-block text-center p-2 {{ Request::is('alerts*')? 'text-success' : 'text-light'}}" title="@lang('interface.viewAlerts')">

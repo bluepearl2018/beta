@@ -16,6 +16,9 @@ Route::group([
      * custom admin routes 
      * 
      */ 
+    CRUD::resource('/user', '\Modules\Account\Http\Controllers\UserCrudController');
+    CRUD::resource('/role', '\Modules\Account\Http\Controllers\RoleCrudController');
+    CRUD::resource('/permission', '\Modules\Account\Http\Controllers\PermissionCrudController');
     
     CRUD::resource('/blog/articles', '\Modules\Blog\Http\Controllers\BlogArticleCrudController');
 

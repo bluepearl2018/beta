@@ -18,22 +18,25 @@
         'UserLanguagePairController', 
         [
             'name' => ['users-language-pairs'],
-            'only' => ['index', 'create', 'store', 'destroy', 'toggleVisibility', 'toggleStatus']])->middleware(['verified']);
+            'only' => ['index', 'create', 'store', 'destroy', 'toggleVisibility', 'toggleStatus']])
+            ->middleware(['auth', 'verified', 'role:translator|permission:access-language-pairs']);
 
         Route::resource('/profile/users-social-medias', 
         'UserSocialMediaController',
         [
             'name' => 'users-social-medias',
-            'only' => ['index', 'create', 'store', 'destroy', 'toggleVisibility', 'toggleStatus']])->middleware(['auth', 'verified']);
+            'only' => ['index', 'create', 'store', 'destroy', 'toggleVisibility', 'toggleStatus']])
+            ->middleware(['auth', 'verified', 'permission:access-social-medias']);
 
         /***
          *  Users Subscriptions Routes
          * */ 
         Route::resource('/profile/users-subscriptions', 
-        'UserSocialMediaController',
+        'UserSubscriptionController',
         [
             'name' => 'users-subscriptions',
-            'only' => ['index', 'destroy', 'toggleVisibility', 'toggleStatus']])->middleware(['auth', 'verified']);
+            'only' => ['index', 'destroy', 'toggleVisibility', 'toggleStatus']])
+            ->middleware(['auth', 'verified', 'permission:access-subscriptions']);
 
         /***
          *  Users Services Routes

@@ -17,6 +17,8 @@ return [
     */
 
     'default' => env('LOG_CHANNEL', 'stack'),
+    
+    'missingtranslations' => env('MISSING_TRANSLATIONS', 'missingtranslations'),
 
     /*
     |--------------------------------------------------------------------------
@@ -87,6 +89,12 @@ return [
 
         'errorlog' => [
             'driver' => 'errorlog',
+            'level' => 'debug',
+        ],
+
+        'missingtranslations' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/missingtranslations.log'),
             'level' => 'debug',
         ],
     ],

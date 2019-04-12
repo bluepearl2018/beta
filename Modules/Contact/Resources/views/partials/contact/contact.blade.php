@@ -5,10 +5,10 @@
 <div class="mt-2">
     <h1 class="border-bottom">
         <i class="fa fa-envelope"></i>
-        @lang('contact.contactUs')
+       @lang('contacts.contactUs')
     </h1>
     <p class="lead">
-        @lang('contact.contactUs')
+       @lang('contacts.contactUs')
     </p>
     <form id="sendMessage" method="POST" action="{{route('contact-post')}}">
             @csrf

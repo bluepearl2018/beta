@@ -20,7 +20,7 @@
                     <div class="col-md-6">
                         <select id="mother_language" class="form-control{{ $errors->has('mother_language') ? ' is-invalid' : '' }} mb-2" name="mother_language" value="{{ old('mother_language') }}" required autofocus>
                             @php($sourcelanguages = Sourcelanguage::orderBy('name', 'asc')->get())
-                            <option value="" disabled selected>{{ __('SÃ©lectionnez votre langue') }}</option>
+                            <option value="" disabled selected>@lang('interface.selectYourLanguage')</option>
                             @foreach($sourcelanguages as $language)
                                 <option value="@if(old($language->id)){{ old($language->id) }}@else{{ $language->id }} @endif" @if(old($language->id))selected @endif required>{{ $language->name }}</option>
                             @endforeach
@@ -159,7 +159,7 @@
                         <div class="">
                             <div class="form-row align-items-center">
                                 <div class="col-12">
-                                    @php($registerAsArray = array('vendor', 'dtper', 'academic', 'developer', 'proorg'))
+                                    @php($registerAsArray = array('buyer', 'translator', 'dtper', 'academic', 'developer', 'proorg'))
                                     @foreach(\App\Models\Role::whereIn('name', $registerAsArray)->orderBy('id', 'asc')->select('id', 'title', 'description')->get() as $role)
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="register_as" 

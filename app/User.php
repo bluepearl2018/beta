@@ -6,12 +6,18 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+use Spatie\Permission\Traits\HasRoles;
+use Backpack\CRUD\CrudTrait;
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use HasRoles;
+    use CrudTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +25,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','uuid', 'email', 'password', 'firstname', 'surname', 
+        'country_id', 'VAT', 'register_as',  'general_terms', 'mother_language',
+        'visibility_id', 'status_id'
     ];
+
+    protected $guard_name = 'web'; // or whatever guard you want to use
+ 
 
     /**
      * The attributes that should be hidden for arrays.

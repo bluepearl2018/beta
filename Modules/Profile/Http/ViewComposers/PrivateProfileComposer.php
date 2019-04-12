@@ -119,6 +119,7 @@ class PrivateProfileComposer
      */
     public function compose(View $view)
     {
+        if(Auth::check()){
         $selectedUser = Auth::User()->id;
         
         // Account
@@ -181,6 +182,6 @@ class PrivateProfileComposer
         
         // Emails
         $view->with('countUnreadMessages', $this->userMessageRepository->countUnreadMessagesForCurrentUser($selectedUser));
-
+      }
     }
 }

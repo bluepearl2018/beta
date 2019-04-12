@@ -10,16 +10,16 @@
     </div>
     <div class="col-auto mr-2 ml-auto">
         @if($userPool->visibility_id == '1')
-        <span class="badge badge-success">{{ __('Visible')}}</span>
+        <span class="badge badge-success">@lang('interface.visible')}}</span>
         @else
-        <span class="badge badge-warning">{{ __('Invisible')}}</span>
+        <span class="badge badge-warning">@lang('interface.invisible')}}</span>
         @endif
     </div>
     <div class="col-auto mr-2">
         @if($userPool->status_id == '1')
-        <span class="badge badge-success">{{ __('Active')}}</span>
+        <span class="badge badge-success">@lang('interface.active')}}</span>
         @else
-        <span class="badge badge-warning">{{ __('Désactivée')}}</span>
+        <span class="badge badge-warning">@lang('interface.inactive')}}</span>
         @endif
     </div>
     @if($userPool->user_id == Auth::User()->id)
