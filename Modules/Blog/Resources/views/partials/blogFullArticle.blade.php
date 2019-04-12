@@ -1,4 +1,5 @@
 @isset($articleData)
+<div class="container-fluid py-3">
     <h1>
         {{ $articleData['title'] }}
     </h1>
@@ -11,4 +12,5 @@
         @endif    
         {{ $articleData['content'] }}
     </p>
+</div>
 @endisset

@@ -1,8 +1,8 @@
 @isset($blogMenu)
     @if ($blogMenu->count())
-      <div id="accordion" class="container-fluid card-columns">
+      <div id="accordion" class="container-fluid d-flex flex-column my-3 p-0">
             @foreach ($blogMenu as $k => $menu_item)
-                <div class="card mb-0 py-0 border-top"> 
+                <div class="card mb-3 py-0 border-top"> 
                     <a class="h2 mb-0 py-3 px-3 text-light d-block bg-primary {{ (Request::is('blog/'.$menu_item->slug.'*'))? 'font-weight-bold':'' }}" id="heading{{$menu_item->slug }}"  
                     data-toggle="collapse" data-target="#collapse{{$menu_item->slug }}" 
                     aria-expanded="{{ (Request::is('blog/'.$menu_item->slug))? 'true':'false' }}" 

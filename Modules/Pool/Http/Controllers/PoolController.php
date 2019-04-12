@@ -27,9 +27,9 @@ class PoolController extends Controller
     protected $poolManagerRepository;
     /** @var PoolLinguistRepository */
     protected $poolLinguistRepository;
-    /** @var PoolLDtperRepository */
+    /** @var PoolDtperRepository */
     protected $poolDtperRepository;
-    /** @var PoolLAcademicRepository */
+    /** @var PoolAcademicRepository */
     protected $poolAcademicRepository;
     /** @var PoolDeveloperRepository */
     protected $poolDeveloperRepository;
@@ -96,9 +96,67 @@ class PoolController extends Controller
         $academicsForCurrentPool = $this->poolAcademicRepository->getAcademicsForSelectedPool($slug);
         $dtpersForCurrentPool = $this->poolDtperRepository->getDtpersForSelectedPool($slug);
         $managersForCurrentPool = $this->poolManagerRepository->getManagersForSelectedPool($slug);
-        $countLocales = count(\Illuminate\Support\Facades\Config::get('app.locales'));
-        $managersStakesForCurrentPool = $this->poolManagerRepository->getManagersStakesForSelectedPool($slug);
-        return view('pool::show')->with(compact('poolData', 'countLocales', 'translatorsForCurrentPool','dtpersForCurrentPool', 'academicsForCurrentPool', 'developersForCurrentPool', 'managersForCurrentPool'));
+        $countLocales = count(\Illuminate\Support\Facades\Config::get('app.serviceLocales'));
+        
+        /***
+         * Generate a unique Languages list for available PoolManagers
+         */
+        $selectPoolManagerLanguages = [];
+        if(!is_null($managersForCurrentPool)){
+            $selectPoolManagerRegions = [];
+            foreach($managersForCurrentPool as $regions){
+                $selectPoolManagerRegions[] = $regions->language;
+            }
+            $selectPoolManagerLanguages = array_unique($selectPoolManagerRegions);
+        }
+        
+        /***
+         * Generate a unique Languages list for available PoolAcademics
+         */
+        $selectPoolAcademicLanguages = [];
+        if(!is_null($academicsForCurrentPool)){
+            $selectPoolAcademicRegions = [];
+            foreach($academicsForCurrentPool as $regions){
+                $selectPoolAcademicRegions[] = $regions->language;
+            }
+            $selectPoolAcademicLanguages = array_unique($selectPoolAcademicRegions);
+        }
+
+        /***
+         * Generate a unique Languages list for PoolDevelopers
+         */
+        $selectPoolDeveloperLanguages = [];
+        if(!is_null($developersForCurrentPool)){
+            $selectPoolDeveloperRegions = [];
+            foreach($developersForCurrentPool as $regions){
+                $selectPoolDeveloperRegions[] = $regions->language;
+            }
+            $selectPoolDeveloperLanguages = array_unique($selectPoolDeveloperRegions);
+        }
+
+        $selectPoolTranslatorsTgtLanguages = [];
+        $selectPoolTranslatorsSrcLanguages = [];
+        /***
+         * Generate language Pairs selectors for available translators in pool
+        if(!is_null($developersForCurrentPool)){
+            foreach($translatorsForCurrentPool as $targetlanguages){
+                $selectPoolTranslatorsTargets[] = $targetlanguages->targetlanguage;
+            }
+            $selectPoolTranslatorsTgtLanguages = array_unique($selectPoolTranslatorsTargets);
+            
+            foreach($translatorsForCurrentPool as $sourcelanguages){
+                $selectPoolTranslatorsSources[] = $sourcelanguages->sourcelanguage;
+            }
+            $selectPoolTranslatorsSrcLanguages = array_unique($selectPoolTranslatorsSources);
+        }
+         */
+        
+        return view('pool::show')->with(compact('poolData', 'countLocales', 
+        'translatorsForCurrentPool','dtpersForCurrentPool', 'academicsForCurrentPool', 
+        'developersForCurrentPool', 'managersForCurrentPool', 
+        'selectPoolManagerLanguages', 'selectPoolDeveloperLanguages', 
+        'selectPoolTranslatorsTgtLanguages', 'selectPoolAcademicLanguages', 
+        'selectPoolTranslatorsSrcLanguages'));
     }
 
     public function applyToManageAPool(Request $request)

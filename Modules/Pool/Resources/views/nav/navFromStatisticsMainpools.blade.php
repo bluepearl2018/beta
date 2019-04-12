@@ -1,4 +1,3 @@
-
 <ul class="list-inline mb-2">
     @if($translatorsInPool > 0)
     <li class="list-inline-item">

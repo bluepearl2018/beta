@@ -51,9 +51,14 @@ class PoolLinguist extends Model
         return $this->belongsTo(\App\Models\User::class, 'user_id');
     }
 
-    public function language()
+    public function sourcelanguage()
     {
         return $this->belongsTo(\Modules\UiTables\Entities\Sourcelanguage::class, 'language_id');
+    }
+
+    public function targetlanguage()
+    {
+        return $this->belongsTo(\Modules\UiTables\Entities\Targetlanguage::class, 'language_id');
     }
     
     public function pool()

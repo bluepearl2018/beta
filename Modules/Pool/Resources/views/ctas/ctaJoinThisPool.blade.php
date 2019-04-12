@@ -1,0 +1,1 @@
+<img class="img-fluid" src="https://via.placeholder.com/480x240" alt="lang('pool.ctaJoinThisPool')" />

@@ -36,7 +36,6 @@ class PoolManagerRepository extends PoolManager
     public function getManagersForSelectedPool($selectedPool){
         $pool_id = Pool::where('slug', $selectedPool)->pluck('id');
         $poolManagers = PoolManager::where('pool_id', $pool_id)->get();
-        // dd($poolManagers);
         return $poolManagers;
     }
 

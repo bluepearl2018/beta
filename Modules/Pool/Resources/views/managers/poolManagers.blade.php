@@ -1,18 +1,19 @@
+@php($configServiceLocales = \Config::get('app.serviceLocales'))
+@php($officialSourceLanguages = \Modules\UiTables\Entities\Sourcelanguage::whereIn('code', $configServiceLocales)->get())
+@php($officialSourceLanguagesId = \Modules\UiTables\Entities\Sourcelanguage::whereIn('code', $configServiceLocales)->pluck('id')->toArray())
+
+@if(!is_null($managersForCurrentPool) && count($managersForCurrentPool) > 0)
 <div class="card mb-3">
     <h2 class="card-header text-light" style="background-color:teal">
         @lang('pool.poolManagersForPool') "{{ $poolData->name }}"
     </h2>
     <div class="card-body">
         <p class="lead">@lang('pool.poolManagersLead')</p>
-        @php($configServiceLocales = \Config::get('app.serviceLocales'))
-        @php($officialSourceLanguages = \Modules\UiTables\Entities\Sourcelanguage::whereIn('code', $configServiceLocales)->get())
-        @php($officialSourceLanguagesId = \Modules\UiTables\Entities\Sourcelanguage::whereIn('code', $configServiceLocales)->pluck('id')->toArray())
-        @if(count($managersForCurrentPool->whereIn('language_id', $officialSourceLanguagesId)) > 0)
+        @if(!is_null($selectPoolManagerLanguages) && count($selectPoolManagerLanguages) > 0)
             <select class="form-control mb-3 bg-secondary" id="pmSelFilter">
-                <option value="">@lang('pool.checkForAvailableNativePm')</option>
-                @forelse($managersForCurrentPool->whereIn('language_id', $officialSourceLanguagesId) as $serviceLocales)
-                    <option value="{{$serviceLocales->language->region}}">
-                        {{$serviceLocales->language->name}}
+                @forelse($selectPoolManagerLanguages as $serviceLocales)
+                    <option value="{{$serviceLocales->region}}">
+                        {{$serviceLocales->name}}
                     </option>
                     @empty
                 @endforelse
@@ -87,6 +88,7 @@
             @endif
         </div>
 </div>
+@endif
 <table class="table container-fluid m-0 p-0">
 @foreach($officialSourceLanguages as $case)
     @forelse($managersForCurrentPool->where('language_id', $case->id) as $poolManager)
@@ -99,7 +101,10 @@
                 <form id="applyForThisPool{{$case->name}}" method="POST" action="/contact/apply">
                     @csrf
                     <input type="hidden" value="{{$case->region}}-{{$poolData->name}}" />
-                    <i class="btn btn-primary py-1 fa fa-envelope"></i>
+                    <button id="applyForThisPool{{$case->name}}Btn" class="btn bg-secondary" 
+                        form="applyForThisPool{{$case->name}}" type="submit">
+                        <i class="fa fa-envelope"></i>
+                    </button>
                 </form>
             </td>
         </tr>

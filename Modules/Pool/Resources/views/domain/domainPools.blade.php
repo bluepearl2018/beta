@@ -32,12 +32,9 @@
                         {{ $pool->name }}
                     </a>
                 </h4>
-                <div class="d-flex flex-md-row flex-column">
-                    <div class="card-body col-md-6">
-                        <img  class="card-image img-fluid" src="https://via.placeholder.com/650x150" />
-                        <div class="bg-dark"> 
-                            @include('pool::nav.navFromStatistics')    
-                        </div>
+                <div class="d-flex flex-lg-row flex-column">
+                    <div class="card-body col-lg-6 my-0 pb-0">
+                        @include('pool::nav.navFromStatistics')
                         @if(strlen($pool->description) < 160)
                             <p>
                                 {{ $pool->description }}
@@ -75,13 +72,11 @@
                             </div>
                         @endif
                     </div>
-                    <div class="card-body col-md-6">
-                        <div class="card">
-                            @include('pool::nav.navInteractionButtons')
-                        </div>
+                    <div class="card-body col-lg-6 my-0 pb-0">
+                        @include('pool::nav.navInteractionButtons')
                     </div>
                 </div>
-                <div class="card-footer text-center p-0">
+                <div class="card-footer text-center p-0 mt-0">
                     <a href="/pools/{!! $pool->parentPool->slug !!}/{{ $pool->slug }}" 
                         class="nav-link">
                         @lang('interface.discoverPool')

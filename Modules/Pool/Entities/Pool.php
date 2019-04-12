@@ -69,7 +69,7 @@ class Pool extends Model
     {
         return $this->belongsTo(\Modules\Pool\Entities\Pool::class, 'parent_id');
     }
-
+    
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

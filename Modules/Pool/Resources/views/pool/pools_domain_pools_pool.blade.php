@@ -57,11 +57,6 @@
 @endif
 
 @isset($pool)
-    <div class="alert alert-info">
-        <i class="fa fa-lightbulb"></i> Abonnez-vous à la lettre d'information 
-        académique et recevez gratuitement la traduction d'articles de chercheurs 
-        européens traduits en de nombreuses langues&nbsp;!
-    </div>
     <div class="panel with-nav-tabs">
         <div class="panel-heading rounded">
             <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
@@ -108,11 +103,10 @@
                 <!-- Managers -->
                 <div class="tab-pane fade in show active" id="project-managers" role="tabpanel" 
                 aria-labelledby="project-managers-tab">
-                        <div class="container py-3 border-left border-bottom border-right">
-                            <!-- If has members show members -->
-                            @include('pools.pools_pool_managers')
-                            
-                        </div>
+                    <div class="container py-3 border-left border-bottom border-right">
+                        <!-- If has members show members -->
+                        @include('pools.pools_pool_managers')
+                    </div>
                 </div>
                 <!-- translators -->
                 <div class="tab-pane fade" id="translators" role="tabpanel" 
